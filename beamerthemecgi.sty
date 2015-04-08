@@ -1,0 +1,111 @@
+\mode<presentation>
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+\useinnertheme{circles}
+
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{eso-pic}
+
+\definecolor{cherry}{RGB}{227,25,55}
+\definecolor{beet}{RGB}{153,31,61}
+\definecolor{pumpkin}{RGB}{255,106,0}
+\definecolor{honey}{RGB}{242,162,0}
+\definecolor{cloud}{RGB}{165,172,176}
+\definecolor{ice}{RGB}{161,196,208}
+\definecolor{lightbeet}{RGB}{230,115,134}
+\definecolor{lightpumpkin}{RGB}{255,170,153}
+\definecolor{lighthoney}{RGB}{255,217,178}
+\definecolor{grey}{rgb}{0.5,0.5,0.5}
+
+\setbeamercolor{title page header}{fg=white}
+
+\setbeamercolor{frametitle}{fg=beet}
+\setbeamercolor{structure}{fg=beet}
+\setbeamercolor{local structure}{fg=cherry}
+
+\setbeamercolor{block body}{bg=lightbeet}
+\setbeamercolor{block title}{bg=beet,fg=white}
+
+%% bottom background
+\usebackgroundtemplate{%
+	\AtPageLowerLeft{\makebox[\paperwidth][r]{\includegraphics[width=\paperwidth]{footer_bg.png}}}%
+}
+
+%% CGI logo
+\logo{\includegraphics[width=10mm]{logo.png}\hspace*{5mm}}
+
+%% use for plain slides
+\newenvironment{frame*}{\usebackgroundtemplate{}\begin{frame}[plain]}{\end{frame}}
+
+%% page numbers
+\setbeamertemplate{footline}{%
+	\hspace*{\fill}%
+	\usebeamercolor[fg]{page number in head/foot}%
+	\usebeamerfont{page number in head/foot}%
+	\insertpagenumber%
+	\hspace*{\fill}\vskip2mm%
+}
+
+%% use for title page
+\newcommand{\titlepageframe}{%
+	{\usebackgroundtemplate{%
+		\includegraphics[width=\paperwidth]{title_bg.png}
+	}
+	\frame[plain]{\titlepage}}
+
+}
+
+
+\newcommand{\@cgilogo}{\logo{\begin{tabular}{c}
+	\hfill\includegraphics[width=15mm]{logo.png}\\*[1mm]
+	\hfill\color{cloud}\tiny Experience the commitment$^\circledR$
+\end{tabular}\hspace{5mm}}}
+
+
+\setbeamertemplate{title page}{
+
+	\vspace*{58mm}
+
+	{\usebeamercolor[fg]{title page header}
+		\hspace*{-5mm} \bf\Large \inserttitle
+	}
+
+	\vspace{16mm}
+
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			{\noindent\color{grey}\scriptsize\insertauthor\\*[-1mm]\insertdate}
+
+			\vspace{2mm}
+
+			{\tiny\color{cloud} \textcopyright{} CGI Group Inc. PUBLIC}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\vspace{1mm}
+
+			\hfill\includegraphics[width=15mm]{logo.png}
+
+			\vspace{1mm}
+
+			\hfill\color{cloud}\tiny Experience the commitment$^\circledR$
+		\end{column}
+	\end{columns}
+}
+
+\newenvironment{simpleframe}{\bgroup%
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{simple_bg.png}}
+	\@cgilogo
+	\begin{frame}
+}{\end{frame}\egroup}
+
+\newenvironment{fillerframe}{\bgroup%
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{filler_bg.png}}
+	\@cgilogo
+	\begin{frame}
+}{\end{frame}\egroup}
+
+
+\mode<all>
