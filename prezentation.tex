@@ -1,12 +1,15 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
+\usepackage{bbding}
 
 \usetheme{cgi}
 
 \title{Modularity with Eclipse RCP}
 \author{Martin Bayer \& Tom\'{a}\v{s} Vejpustek}
 
-\newcommand{\eg}{\textcolor{pumpkin}{\ensuremath{\rightarrow}}}
+\newcommand{\eg}{\textcolor{pumpkin}{\raisebox{-0.5mm}{\HandRight}}}
+\newcommand{\fig}{\textcolor{pumpkin}{\raisebox{-0.5mm}{\PencilRightDown}}}
+\newcommand{\str}[1]{\structure{#1}}
 
 \begin{document}
 
@@ -33,5 +36,45 @@
 \begin{frame}{Why RCP}
 	% TODO nad tímhle chce ještě zapracovat
 \end{frame}
+\begin{frame}{Dependency Injection}%{{{
+	means of accessing software libraries \fig
+	\begin{enumerate}
+		\item I~need \str{service}
+		\item I~ask \str{framework} for \str{interface}
+		\item \str{framework} finds (and initializes) \str{implementation}
+	\end{enumerate}
 
+	\str{implementations} are interchangeable
+\end{frame}%}}}
+\begin{frame}{Dependency Injection in RCP}%{{{
+	\begin{itemize}
+		\item based on \str{OSGi}
+		\item annotations \eg
+			\begin{itemize}
+				\item fields, constructors -- \texttt{@Inject}
+				\item methods -- behavioral (\texttt{@PostConstruct}, \ldots)
+			\end{itemize}
+	\end{itemize}
+
+	\begin{block}{Context}
+		\begin{itemize}
+			\item[=] storage for injectable objects
+			\item[=] mechanism of searching injectable objects
+		\end{itemize}
+		\begin{center}``Let's put this object into context''\end{center}
+	\end{block}
+\end{frame}%}}}
+\begin{frame}{Pros and Cons of Dependency Injection}%{{{
+	\begin{itemize}
+		\item[+] \str{independence on concrete implementation}
+		\item[+] increased modularity
+		\item[+] easy testing
+		\item[+] independent development (only need API)
+		\item[+] reduces boilerplate dependency obtaining
+		\item[$-$] difficult to trace and debug (\alert{document well!})
+	\end{itemize}
+\end{frame}%}}}
+\begin{frame}{Inversion of Control}
+	\begin{center}``Don't call us, we'll call you.''\end{center}
+\end{frame}
 \end{document}
