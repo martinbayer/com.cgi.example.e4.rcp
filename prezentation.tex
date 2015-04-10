@@ -85,10 +85,29 @@
 	\end{itemize}
 \end{frame}%}}}
 \begin{frame}{Application Model}
+	% can be changed dynamically (ModelService) \eg
 \end{frame}
-\begin{frame}{Commands and Handlers}
-\end{frame}
+\begin{frame}{Commands and Handlers}%{{{
+	\begin{description}
+		\item[Command] abstract action (save, \ldots)
+		\item[Handler] actual implementation
+	\end{description}
+
+	\bigskip
+
+	\begin{itemize}
+		\item DI in practice \fig \eg
+			\begin{enumerate}
+				\item button calls \str{command}
+				\item \str{framework} finds closest \str{handler}
+			\end{enumerate}
+		\item different ``save'' for different editors
+		\item handlers can be called from code \eg
+	\end{itemize}
+\end{frame}%}}}
 
 \begin{fillerframe}\frametitle{Break: Questions?}\end{fillerframe}
+
+
 
 \end{document}
