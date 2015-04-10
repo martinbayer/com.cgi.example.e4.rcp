@@ -11,6 +11,8 @@
 \newcommand{\fig}{\textcolor{pumpkin}{\raisebox{-0.5mm}{\PencilRightDown}}}
 \newcommand{\str}[1]{\structure{#1}}
 
+\newcommand{\breakframe}{\begin{fillerframe}\frametitle{Break: Questions?}\end{fillerframe}}
+
 \begin{document}
 
 \titlepageframe
@@ -106,8 +108,31 @@
 	\end{itemize}
 \end{frame}%}}}
 
-\begin{fillerframe}\frametitle{Break: Questions?}\end{fillerframe}
+\breakframe
 
+\begin{frame}{Communication}
+	How to pass information/objects between modules/plugins?
 
+	\medskip
+
+	\begin{itemize}
+		\item DI-based
+		\item[$-$] weird, hard-to-trace errors (missing producer)
+		\item[$+$] decoupling
+	\end{itemize}
+\end{frame}
+\begin{frame}{Eclipse Context}
+	$\mathtt{Class\langle T\rangle}\to\mathtt{T}$
+\end{frame}
+\begin{frame}{Context Hierarchy}
+\end{frame}
+\begin{frame}{Event Service}
+\end{frame}
+\begin{frame}{Context \hfill vs \hfill Event Service}
+\end{frame}
+\begin{frame}{Selection Service}
+\end{frame}
+
+\breakframe
 
 \end{document}
