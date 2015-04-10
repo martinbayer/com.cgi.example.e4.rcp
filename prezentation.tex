@@ -12,6 +12,7 @@
 \newcommand{\str}[1]{\structure{#1}}
 
 \newcommand{\breakframe}{\begin{fillerframe}\frametitle{Break: Questions?}\end{fillerframe}}
+\newenvironment{centerblock}{\begin{block}{}\begin{center}}{\end{center}\end{block}}
 
 \begin{document}
 
@@ -77,7 +78,7 @@
 	\end{itemize}
 \end{frame}%}}}
 \begin{frame}{Inversion of Control}%{{{
-	\begin{center}``Don't call us, we'll call you.''\end{center}
+	\begin{centerblock}``Don't call us, we'll call you.''\end{centerblock}
 	\begin{itemize}
 		\item $\approx$ software framework
 		\item DI is one implementation
@@ -110,19 +111,32 @@
 
 \breakframe
 
-\begin{frame}{Communication}
-	How to pass information/objects between modules/plugins?
+\begin{frame}{Communication}%{{{
+	\begin{centerblock}How to pass information/objects between modules/plugins?\end{centerblock}
 
 	\medskip
 
+	Communication in RCP:
 	\begin{itemize}
 		\item DI-based
 		\item[$-$] weird, hard-to-trace errors (missing producer)
-		\item[$+$] decoupling
+		\item[$+$] great decoupling
 	\end{itemize}
-\end{frame}
+\end{frame}%}}}
 \begin{frame}{Eclipse Context}
-	$\mathtt{Class\langle T\rangle}\to\mathtt{T}$
+	\begin{itemize}
+		\item basis of DI in RCP
+		\item storage of objects
+	\end{itemize}
+	\begin{centerblock}\begin{tabular}{rl}
+		used as & $\mathtt{Class\langle T\rangle}\to\mathtt{T}$\\
+		implemented as & $\mathtt{String} \to \mathtt{Object}$ (\texttt{@Named})\\
+	\end{tabular}\end{centerblock}
+	Passing objects \eg
+	\begin{itemize}
+		\item send using \texttt{IEclipseContext} (obtain by DI)
+		\item receive via DI
+	\end{itemize}
 \end{frame}
 \begin{frame}{Context Hierarchy}
 \end{frame}
