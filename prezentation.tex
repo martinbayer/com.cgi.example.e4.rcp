@@ -13,6 +13,8 @@
 
 \newcommand{\breakframe}{\begin{fillerframe}\frametitle{Break: Questions?}\end{fillerframe}}
 \newenvironment{centerblock}{\begin{block}{}\begin{center}}{\end{center}\end{block}}
+\newcommand{\ttt}[1]{\texttt{#1}}
+\newcommand{\mtt}[1]{\ensuremath{\mathtt{#1}}}
 
 \begin{document}
 
@@ -54,8 +56,8 @@
 		\item based on \str{OSGi}
 		\item annotations \eg
 			\begin{itemize}
-				\item fields, constructors -- \texttt{@Inject}
-				\item methods -- behavioral (\texttt{@PostConstruct}, \ldots)
+				\item fields, constructors -- \ttt{@Inject}
+				\item methods -- behavioral (\ttt{@PostConstruct}, \ldots)
 			\end{itemize}
 	\end{itemize}
 
@@ -123,24 +125,32 @@
 		\item[$+$] great decoupling
 	\end{itemize}
 \end{frame}%}}}
-\begin{frame}{Eclipse Context}
+\begin{frame}{Eclipse Context}%{{{
 	\begin{itemize}
 		\item basis of DI in RCP
 		\item storage of objects
 	\end{itemize}
 	\begin{centerblock}\begin{tabular}{rl}
-		used as & $\mathtt{Class\langle T\rangle}\to\mathtt{T}$\\
-		implemented as & $\mathtt{String} \to \mathtt{Object}$ (\texttt{@Named})\\
+		used as & $\mtt{Class\langle T\rangle}\to\mtt{T}$\\
+		implemented as & $\mtt{String} \to \mtt{Object}$ (\ttt{@Named})\\
 	\end{tabular}\end{centerblock}
 	Passing objects \eg
 	\begin{itemize}
-		\item send using \texttt{IEclipseContext} (obtain by DI)
+		\item send using \ttt{IEclipseContext} (from DI)
 		\item receive via DI
 	\end{itemize}
-\end{frame}
+\end{frame}%}}}
 \begin{frame}{Context Hierarchy}
+
 \end{frame}
 \begin{frame}{Event Service}
+
+
+	Passing objects \eg
+	\begin{itemize}
+		\item send using \ttt{IEventBroker} (from DI): \ttt{send}, \ttt{post}
+		\item receive via DI: \ttt{@EventTopic}, \ttt{@UIEventTopic}
+	\end{itemize}
 \end{frame}
 \begin{frame}{Context \hfill vs \hfill Event Service}
 \end{frame}
