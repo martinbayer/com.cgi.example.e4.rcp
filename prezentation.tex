@@ -16,6 +16,8 @@
 \newcommand{\ttt}[1]{\texttt{\color{honey}#1}}
 \newcommand{\mtt}[1]{\ensuremath{\mathtt{#1}}}
 \newcommand{\singleindent}[1]{\begin{itemize}\item[] #1\end{itemize}}
+\let\oldurl\url
+\renewcommand{\url}[1]{\textcolor{pumpkin}{\scriptsize\oldurl{#1}}}
 
 \begin{document}
 
@@ -191,5 +193,44 @@
 \end{frame}%}}}
 
 \breakframe
+
+\begin{frame}{Plugins}
+\end{frame}
+\begin{frame}{Extensions}
+\end{frame}
+\begin{frame}{Fragments}
+\end{frame}
+\begin{frame}{Addons}
+\end{frame}
+\begin{frame}{Extensions vs Addons}
+\end{frame}
+
+\breakframe
+
+\begin{frame}{Miscellaneous}
+	\begin{itemize}
+		\item Eclipse 4 RCP (e3 was different)
+		\item RCP uses SWT (heavyweight components)
+		\item RAP $=$ RCP on web (in development)
+	\end{itemize}
+\end{frame}
+\begin{frame}{Summary}
+\end{frame}
+\begin{frame}{Sources}
+	official page \url{https://wiki.eclipse.org/index.php/Rich_Client_Platform}
+
+	tutorials from Lars Vogel
+		\begin{itemize}
+			\item Eclipse 4 RCP: The complete guide to Eclipse application development
+			\item\url{http://www.vogella.com/tutorials/EclipseRCP/article.html}
+		\end{itemize}
+
+	slides and examples \url{https://github.com/martinbayer/com.cgi.example.e4.rcp}
+\end{frame}
+\begin{simpleframe}
+	\str{\Huge THANK YOU}
+
+	\Large Any questions?
+\end{simpleframe}
 
 \end{document}
