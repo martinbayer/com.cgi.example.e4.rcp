@@ -177,8 +177,18 @@
 		\item handlers do not need notification \alert{[!]}
 	\end{itemize}
 \end{frame}%}}}
-\begin{frame}{Selection Service}
-\end{frame}
+\begin{frame}{Selection Service}%{{{
+	\begin{itemize}
+		\item context + event service
+		\item active GUI selection
+		\item window and part -specific
+	\end{itemize}
+	Passing objects \eg
+	\begin{itemize}
+		\item send using \ttt{ESelectionService.setSelection}
+		\item receive via DI: \ttt{@Named(IServiceConstants.ACTIVE\_SELECTION)}
+	\end{itemize}
+\end{frame}%}}}
 
 \breakframe
 
