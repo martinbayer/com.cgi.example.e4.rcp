@@ -7,7 +7,9 @@
 \title{Modularity with Eclipse RCP}
 \author{Martin Bayer \& Tom\'{a}\v{s} Vejpustek}
 
-\newcommand{\eg}{\textcolor{pumpkin}{\raisebox{-0.5mm}{\HandRight}}}
+\makeatletter
+\newcommand{\@eg}{\raisebox{-0.5mm}{\HandRight}}
+\def\eg{\@ifstar{\textcolor{ice}{\@eg}}{\textcolor{pumpkin}{\@eg}} }
 \newcommand{\fig}{\textcolor{pumpkin}{\raisebox{-0.5mm}{\PencilRightDown}}}
 \newcommand{\str}[1]{\structure{#1}}
 
@@ -18,6 +20,7 @@
 \newcommand{\singleindent}[1]{\begin{itemize}\item[] #1\end{itemize}}
 \let\oldurl\url
 \renewcommand{\url}[1]{\textcolor{pumpkin}{\scriptsize\oldurl{#1}}}
+\makeatother
 
 \begin{document}
 
@@ -93,6 +96,19 @@
 	\end{itemize}
 \end{frame}%}}}
 \begin{frame}{Application Model}
+	\begin{itemize}
+		\item basis of RCP framework
+		\item Java classes assigned to elements
+		\item behaviour ruled by annotations
+		\item elements \eg
+			\begin{itemize}
+				\item graphical: window, perspective, part
+				\item commands, handlers, menus, tool items
+				\item addons (provide services)
+			\end{itemize}
+		\item can be changed dynamically (\ttt{EModelService}) \eg*
+	\end{itemize}
+
 	% can be changed dynamically (ModelService) \eg
 \end{frame}
 \begin{frame}{Commands and Handlers}%{{{
@@ -207,13 +223,13 @@
 
 \breakframe
 
-\begin{frame}{Miscellaneous}
+\begin{frame}{Miscellaneous}%{{{
 	\begin{itemize}
 		\item Eclipse 4 RCP (e3 was different)
 		\item RCP uses SWT (heavyweight components)
 		\item RAP $=$ RCP on web (in development)
 	\end{itemize}
-\end{frame}
+\end{frame}%}}}
 \begin{frame}{Summary}
 \end{frame}
 \begin{frame}{Sources}
