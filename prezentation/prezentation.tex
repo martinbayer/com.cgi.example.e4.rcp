@@ -238,6 +238,23 @@
 \begin{frame}{Extensions}
 
 \end{frame}
+\begin{frame}{Extensions (deprecated)}
+	\begin{itemize}
+		\item built on \str{OSGi} extensions
+		\item plugins define (\ttt{plugin.xml})
+			\begin{enumerate}
+				\item \str{extension point} -- what \str{extensions} must provide
+					\begin{itemize}
+						\item attributes -- typed (XML Schema)
+						\item classes -- implements/extends
+					\end{itemize}
+				\item \str{extension}(s) -- provide values/class
+			\end{enumerate}
+		\item plugins read extensions and obtain instances \eg
+		\item concrete implementation not accessible (dependency)
+		\item DI problematic (\ttt{IExecutableExtension})
+	\end{itemize}
+\end{frame}
 \begin{frame}{Fragments}%<<<
 	\begin{itemize}
 		\item adds to \str{application model}
@@ -246,8 +263,18 @@
 		\item GUI decompozition -- plugins for perspectives, parts, \ldots
 	\end{itemize}
 \end{frame}%>>>
-\begin{frame}{Addons}
-\end{frame}
+\begin{frame}{Addons}%<<<
+	\begin{itemize}
+		\item model fragments $\Rightarrow$ use DI
+		\item behavioral annotations
+		\item typical functions \eg
+			\begin{enumerate}
+				\item provide context objects (services)
+				\item listen to messages
+				\item process extensions
+			\end{enumerate}
+	\end{itemize}
+\end{frame}%>>>
 \begin{frame}{Extensions vs Addons}
 \end{frame}
 
