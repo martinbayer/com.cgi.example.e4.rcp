@@ -7,9 +7,9 @@
 \title{Modularity with Eclipse RCP}
 \author{Martin Bayer \& Tom\'{a}\v{s} Vejpustek}
 
-\makeatletter
+\makeatletter%<<<
 \newcommand{\@eg}{\raisebox{-0.5mm}{\HandRight}}
-\def\eg{\@ifstar{\textcolor{ice}{\@eg}}{\textcolor{pumpkin}{\@eg}} }
+\def\eg{\@ifstar{\textcolor{ice}{\@eg}}{\textcolor{pumpkin}{\@eg}}}
 \newcommand{\fig}{\textcolor{pumpkin}{\raisebox{-0.5mm}{\PencilRightDown}}}
 \newcommand{\str}[1]{\structure{#1}}
 
@@ -20,12 +20,12 @@
 \newcommand{\singleindent}[1]{\begin{itemize}\item[] #1\end{itemize}}
 \let\oldurl\url
 \renewcommand{\url}[1]{\textcolor{pumpkin}{\scriptsize\oldurl{#1}}}
-\makeatother
+\makeatother%>>>
 
 \begin{document}
 
 \titlepageframe
-\begin{frame}{Outline}%{{{
+\begin{frame}{Outline}%<<<
 	Basic understanding of RCP:
 	\begin{enumerate}
 		\item What is Eclipse RCP?
@@ -34,8 +34,8 @@
 		\item Communication
 		\item Modularity with plugins
 	\end{enumerate}
-\end{frame}%}}}
-\begin{frame}{Eclipse Rich Client Platform}%{{{
+\end{frame}%>>>
+\begin{frame}{Eclipse Rich Client Platform}%<<<
 	\begin{itemize}
 		\item \alert{not} plugins for Eclipse IDE
 		\item software framework
@@ -43,11 +43,11 @@
 		\item layout looks like Eclipse IDE \eg
 	\end{itemize}
 	%TODO example picture or notice
-\end{frame}%}}}
+\end{frame}%>>>
 \begin{frame}{Why RCP}
 	% TODO nad tímhle chce ještě zapracovat
 \end{frame}
-\begin{frame}{Dependency Injection}%{{{
+\begin{frame}{Dependency Injection}%<<<
 	means of accessing software libraries \fig
 	\begin{enumerate}
 		\item I~need \str{service}
@@ -56,8 +56,8 @@
 	\end{enumerate}
 
 	\str{implementations} are interchangeable
-\end{frame}%}}}
-\begin{frame}{Dependency Injection in RCP}%{{{
+\end{frame}%>>>
+\begin{frame}{Dependency Injection in RCP}%<<<
 	\begin{itemize}
 		\item based on \str{OSGi}
 		\item annotations \eg
@@ -74,8 +74,8 @@
 		\end{itemize}
 		\begin{center}``Let's put this object into context''\end{center}
 	\end{block}
-\end{frame}%}}}
-\begin{frame}{Pros and Cons of Dependency Injection}%{{{
+\end{frame}%>>>
+\begin{frame}{Pros and Cons of Dependency Injection}%<<<
 	\begin{itemize}
 		\item[+] \str{independence on concrete implementation}
 		\item[+] increased modularity
@@ -84,8 +84,8 @@
 		\item[+] reduces boilerplate dependency obtaining
 		\item[$-$] difficult to trace and debug (\alert{document well!})
 	\end{itemize}
-\end{frame}%}}}
-\begin{frame}{Inversion of Control}%{{{
+\end{frame}%>>>
+\begin{frame}{Inversion of Control}%<<<
 	\begin{centerblock}``Don't call us, we'll call you.''\end{centerblock}
 	\begin{itemize}
 		\item $\approx$ software framework
@@ -94,7 +94,7 @@
 		\item user writes \str{GUI elements} and \str{framework places} them
 		\item when/where $\Leftarrow$ configuration (XML files)
 	\end{itemize}
-\end{frame}%}}}
+\end{frame}%>>>
 \begin{frame}{Application Model}
 	\begin{itemize}
 		\item basis of RCP framework
@@ -111,7 +111,7 @@
 
 	% can be changed dynamically (ModelService) \eg
 \end{frame}
-\begin{frame}{Commands and Handlers}%{{{
+\begin{frame}{Commands and Handlers}%<<<
 	\begin{description}
 		\item[Command] abstract action (save, \ldots)
 		\item[Handler] actual implementation
@@ -128,11 +128,11 @@
 		\item different ``save'' for different editors
 		\item handlers can be called from code \eg
 	\end{itemize}
-\end{frame}%}}}
+\end{frame}%>>>
 
 \breakframe
 
-\begin{frame}{Communication}%{{{
+\begin{frame}{Communication}%<<<
 	\begin{centerblock}How to pass information/objects between modules/plugins?\end{centerblock}
 
 	\medskip
@@ -143,8 +143,8 @@
 		\item[$-$] weird, hard-to-trace errors (missing producer)
 		\item[$+$] great decoupling
 	\end{itemize}
-\end{frame}%}}}
-\begin{frame}{Eclipse Context}%{{{
+\end{frame}%>>>
+\begin{frame}{Eclipse Context}%<<<
 	\begin{itemize}
 		\item basis of DI in RCP
 		\item storage of objects
@@ -158,11 +158,11 @@
 		\item send using \ttt{IEclipseContext} (from DI)
 		\item receive via DI
 	\end{itemize}
-\end{frame}%}}}
+\end{frame}%>>>
 \begin{frame}{Context Hierarchy}
 
 \end{frame}
-\begin{frame}{Event Service}%{{{
+\begin{frame}{Event Service}%<<<
 	\begin{itemize}
 		\item global messages (context-independent)
 		\item stringly typed (message topics)
@@ -177,8 +177,8 @@
 		\item receive via DI
 			\singleindent{\ttt{@EventTopic}, \ttt{@UIEventTopic} (UI thread)}
 	\end{itemize}
-\end{frame}%}}}
-\begin{frame}{Context vs Event Service}%{{{
+\end{frame}%>>>
+\begin{frame}{Context vs Event Service}%<<<
 	\begin{itemize}
 		\item \str{persistence} vs \str{notification}
 		\item persistence important for inactive parts
@@ -194,8 +194,8 @@
 		\item use \str{context} for parts and handlers
 		\item handlers do not need notification \alert{[!]}
 	\end{itemize}
-\end{frame}%}}}
-\begin{frame}{Selection Service}%{{{
+\end{frame}%>>>
+\begin{frame}{Selection Service}%<<<
 	\begin{itemize}
 		\item context + event service
 		\item active GUI selection
@@ -206,7 +206,7 @@
 		\item send using \ttt{ESelectionService.setSelection}
 		\item receive via DI: \ttt{@Named(IServiceConstants.ACTIVE\_SELECTION)}
 	\end{itemize}
-\end{frame}%}}}
+\end{frame}%>>>
 
 \breakframe
 
@@ -223,13 +223,13 @@
 
 \breakframe
 
-\begin{frame}{Miscellaneous}%{{{
+\begin{frame}{Miscellaneous}%<<<
 	\begin{itemize}
 		\item Eclipse 4 RCP (e3 was different)
 		\item RCP uses SWT (heavyweight components)
 		\item RAP $=$ RCP on web (in development)
 	\end{itemize}
-\end{frame}%}}}
+\end{frame}%>>>
 \begin{frame}{Summary}
 \end{frame}
 \begin{frame}{Sources}
