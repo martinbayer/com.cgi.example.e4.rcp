@@ -236,6 +236,9 @@
 	\end{itemize}
 \end{frame}%>>>
 \begin{frame}{Extensions}%<<<
+	\begin{itemize}
+		\item built on \str{OSGi} extensions (simplified)
+	\end{itemize}
 	\begin{enumerate}
 		\item define \str{extension point} -- contract for \str{extensions}
 			\begin{itemize}
@@ -246,25 +249,18 @@
 		\item process contributions (\ttt{IExtensionRegistry} via DI)
 	\end{enumerate}\eg
 \end{frame}%>>>
-\begin{frame}{Executable Extensions}
-\end{frame}
-\begin{frame}{Extensions (deprecated)}
+\begin{frame}{Executable Extensions}%<<<
 	\begin{itemize}
-		\item built on \str{OSGi} extensions
-		\item plugins define (\ttt{plugin.xml})
-			\begin{enumerate}
-				\item \str{extension point} -- what \str{extensions} must provide
-					\begin{itemize}
-						\item attributes -- typed (XML Schema)
-						\item classes -- implements/extends
-					\end{itemize}
-				\item \str{extension}(s) -- provide values/class
-			\end{enumerate}
-		\item plugins read extensions and obtain instances \eg
-		\item concrete implementation not accessible (dependency)
-		\item DI problematic (\ttt{IExecutableExtension})
+		\item framework creates classes from contributing plugin
+		\item actual implementation inaccessible (dependency)
+		\item created implicitly (default constructor)
+		\item problems with DI and configuration
+			\begin{itemize}
+				\item\ttt{IExecutableExtension}
+				\item\ttt{IExecutableExtensionFactory}
+			\end{itemize}
 	\end{itemize}
-\end{frame}
+\end{frame}%>>>
 \begin{frame}{Fragments}%<<<
 	\begin{itemize}
 		\item adds to \str{application model}
