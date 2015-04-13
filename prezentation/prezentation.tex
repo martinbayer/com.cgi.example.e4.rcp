@@ -254,10 +254,10 @@
 		\item framework creates classes from contributing plugin
 		\item actual implementation inaccessible (dependency)
 		\item created implicitly (default constructor)
-		\item problems with DI and configuration
+		\item cannot access context
 			\begin{itemize}
-				\item\ttt{IExecutableExtension}
-				\item\ttt{IExecutableExtensionFactory}
+				\item use \ttt{ContextInjectionFactory}
+				\item some annotation will not work (\ttt{@PostConstruct})
 			\end{itemize}
 	\end{itemize}
 \end{frame}%>>>
@@ -325,8 +325,30 @@
 		\item RAP $=$ RCP on web (in development)
 	\end{itemize}
 \end{frame}%>>>
-\begin{frame}{Summary}
-\end{frame}
+\begin{frame}%<<<
+	\frametitle{Summary}
+	\begin{enumerate}
+		\item \str{dependency injection}: I~want something, framework finds it
+		\item \str{inversion of control}: I~write snippets, framework uses them
+		\item \str{application model} -- IoC implementation, hierarchical
+			\begin{itemize}
+				\item windows, perspectives, parts, \ldots
+				\item commands (actions), handlers (implementation)
+			\end{itemize}
+		\item \str{context} -- DI implementation, object storage
+			\begin{itemize}
+				\item hierarchical: application, windows, perspectives, parts
+				\item persistent, changes not notified
+			\end{itemize}
+		\item \str{event service} -- global event sending
+			\begin{itemize}
+				\item for persistence, add context (unitialized parts)
+			\end{itemize}
+		\item \str{extensions} -- metadata, executable extensions
+		\item \str{fragments} -- add to application model
+		\item \str{addons} -- provide services, listen to events, process extensions
+	\end{enumerate}
+\end{frame}%>>>
 \begin{frame}{Sources}
 	official page \url{https://wiki.eclipse.org/index.php/Rich_Client_Platform}
 
