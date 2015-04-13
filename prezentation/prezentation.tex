@@ -48,14 +48,16 @@
 	% TODO nad tímhle chce ještě zapracovat
 \end{frame}
 \begin{frame}{Dependency Injection}%<<<
-	means of accessing software libraries \fig
-	\begin{enumerate}
-		\item I~need \str{service}
-		\item I~ask \str{framework} for \str{interface}
-		\item \str{framework} finds (and initializes) \str{implementation}
-	\end{enumerate}
+	\begin{itemize}
+		\item[=] means of accessing software libraries \fig
+			\begin{enumerate}
+				\item I~need \str{service}
+				\item I~ask \str{framework} for \str{interface}
+				\item \str{framework} finds (and initializes) \str{implementation}
+			\end{enumerate}
 
-	\str{implementations} are interchangeable
+		\item\str{implementations} are interchangeable
+	\end{itemize}
 \end{frame}%>>>
 \begin{frame}{Dependency Injection in RCP}%<<<
 	\begin{itemize}
@@ -88,7 +90,7 @@
 \begin{frame}{Inversion of Control}%<<<
 	\begin{centerblock}``Don't call us, we'll call you.''\end{centerblock}
 	\begin{itemize}
-		\item $\approx$ software framework
+		\item[$\approx$] software framework
 		\item DI is one implementation
 		\item user writes \str{snippets} and \str{framework calls} them
 		\item user writes \str{GUI elements} and \str{framework places} them
@@ -170,7 +172,7 @@
 			\end{enumerate}
 
 		\item used in handler look-up
-		\item \alert{use common context for communication!} \eg
+		\item \alert{Use common context for communication!} \eg
 	\end{itemize}
 \end{frame}%>>>
 \begin{frame}{Event Service}%<<<
@@ -221,8 +223,18 @@
 
 \breakframe
 
-\begin{frame}{Plugins}
-\end{frame}
+\begin{frame}{Plugin}%<<<
+	\begin{itemize}
+		\item[=] application module
+			\begin{enumerate}
+				\item describes what it provides/extends
+				\item framework plugs it in
+			\end{enumerate}
+		\item defined in \ttt{plugin.xml}
+		\item dependencies and provided packages in \ttt{MANIFEST.MF}
+		\item plugin $\subseteq$ feature $\subseteq$ product
+	\end{itemize}
+\end{frame}%>>>
 \begin{frame}{Extensions}
 \end{frame}
 \begin{frame}{Fragments}
