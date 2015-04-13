@@ -235,8 +235,18 @@
 		\item plugin $\subseteq$ feature $\subseteq$ product
 	\end{itemize}
 \end{frame}%>>>
-\begin{frame}{Extensions}
-
+\begin{frame}{Extensions}%<<<
+	\begin{enumerate}
+		\item define \str{extension point} -- contract for \str{extensions}
+			\begin{itemize}
+				\item attributes -- primitive types (XML Schema)
+				\item executable extension -- implements/extends
+			\end{itemize}
+		\item register contributing extensions (\ttt{plugin.xml})
+		\item process contributions (\ttt{IExtensionRegistry} via DI)
+	\end{enumerate}\eg
+\end{frame}%>>>
+\begin{frame}{Executable Extensions}
 \end{frame}
 \begin{frame}{Extensions (deprecated)}
 	\begin{itemize}
