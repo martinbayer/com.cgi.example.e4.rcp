@@ -291,6 +291,24 @@
 		\item plugin defines \str{extension point} and processes \str{extensions} via \str{addon} (puts results into \str{context})
 	\end{itemize}
 \end{frame}%>>>
+\begin{frame}{Example Extension: Preference Pages}%<<<
+	\begin{centerblock}Each plugin can provide its preference page.\end{centerblock}
+	\begin{itemize}
+		\item[]\str{Extension point}
+			\begin{itemize}
+				\item page id
+				\item parent page id (optional)
+				\item implementation extends \ttt{IPreferencePage}
+			\end{itemize}
+		\item[]\str{Command} w/ parameter: opened page id
+		\item[]\str{Handler}
+			\begin{enumerate}
+				\item reads preference pages
+				\item creates tree structure
+				\item opens \ttt{PreferenceDialog} on given page
+			\end{enumerate}
+	\end{itemize}
+\end{frame}%>>>
 
 \breakframe
 
