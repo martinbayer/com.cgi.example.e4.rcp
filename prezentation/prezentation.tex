@@ -267,7 +267,7 @@
 	\begin{itemize}
 		\item model fragments $\Rightarrow$ use DI
 		\item behavioral annotations
-		\item typical functions \eg
+		\item typically \eg
 			\begin{enumerate}
 				\item provide context objects (services)
 				\item listen to messages
@@ -275,8 +275,22 @@
 			\end{enumerate}
 	\end{itemize}
 \end{frame}%>>>
-\begin{frame}{Extensions vs Addons}
-\end{frame}
+\begin{frame}{Extensions vs Addons}%<<<
+	\begin{enumerate}
+		\item prefer \str{addons} (simpler, DI)
+		\item \str{extensions} for existing extension points
+		\item custom \str{extension points}
+			\begin{itemize}
+				\item model for future extensions
+				\item multiple similar extensions
+				\item (usually) used in one place
+			\end{itemize}
+	\end{enumerate}
+	\begin{itemize}
+		\item \str{extensions} must be explicitly processed
+		\item plugin defines \str{extension point} and processes \str{extensions} via \str{addon} (puts results into \str{context})
+	\end{itemize}
+\end{frame}%>>>
 
 \breakframe
 
