@@ -157,9 +157,22 @@
 		\item receive via DI
 	\end{itemize}
 \end{frame}%>>>
-\begin{frame}{Context Hierarchy}
+\begin{frame}{Context Hierarchy}%<<<
+	\begin{itemize}
+		\item own context for app model elements -- \ttt{MContext}\\
+			\singleindent{application, window, perspective, part, popup menu}
 
-\end{frame}
+		\item DI look-up \fig
+			\begin{enumerate}
+				\item search current context
+				\item not found $\Rightarrow$ search parent context; \alert{repeat}
+				\item not found in application context $\Rightarrow$ \texttt{null}/error
+			\end{enumerate}
+
+		\item used in handler look-up
+		\item \alert{use common context for communication!} \eg
+	\end{itemize}
+\end{frame}%>>>
 \begin{frame}{Event Service}%<<<
 	\begin{itemize}
 		\item global messages (context-independent)
