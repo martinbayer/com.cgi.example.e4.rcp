@@ -161,7 +161,7 @@
 \end{frame}%>>>
 \begin{frame}{Context Hierarchy}%<<<
 	\begin{itemize}
-		\item own context for app model elements -- \ttt{MContext}\\
+		\item own context for \str{app model} elements -- \ttt{MContext}\\
 			\singleindent{application, window, perspective, part, popup menu}
 
 		\item DI look-up \fig
@@ -236,9 +236,16 @@
 	\end{itemize}
 \end{frame}%>>>
 \begin{frame}{Extensions}
+
 \end{frame}
-\begin{frame}{Fragments}
-\end{frame}
+\begin{frame}{Fragments}%<<<
+	\begin{itemize}
+		\item adds to \str{application model}
+		\item GUI elements, commands, handlers, \ldots \eg
+		\item extension (\ttt{org.eclipse.e4.workbench.model})
+		\item GUI decompozition -- plugins for perspectives, parts, \ldots
+	\end{itemize}
+\end{frame}%>>>
 \begin{frame}{Addons}
 \end{frame}
 \begin{frame}{Extensions vs Addons}
