@@ -1,3 +1,8 @@
+.metadata/
+*.launch
+.settings/
+.classpath
+bin/
 prezentation/*.aux
 prezentation/*.log
 prezentation/*.nav
