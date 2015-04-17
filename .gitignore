@@ -1,7 +1,7 @@
-*.aux
-*.log
-*.nav
-*.out
-*.pdf
-*.snm
-*.toc
+prezentation/*.aux
+prezentation/*.log
+prezentation/*.nav
+prezentation/*.out
+prezentation/*.pdf
+prezentation/*.snm
+prezentation/*.toc
