@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ASCII"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_o86SweTnEeSUp6JJWmQY_w" elementId="org.eclipse.e4.ide.application" contributorURI="platform:/plugin/c1_dependinject" selectedElement="_o86SwuTnEeSUp6JJWmQY_w" bindingContexts="_o86S1-TnEeSUp6JJWmQY_w">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_o86SwuTnEeSUp6JJWmQY_w" contributorURI="platform:/plugin/c1_dependinject" selectedElement="_o86Sw-TnEeSUp6JJWmQY_w" label="com.cgi.example.e4.rcp.c1_dependinject" x="150" y="150" width="500" height="400">
+    <tags>topLevel</tags>
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_o86Sw-TnEeSUp6JJWmQY_w" contributorURI="platform:/plugin/c1_dependinject" selectedElement="_o86SxOTnEeSUp6JJWmQY_w">
+      <children xsi:type="advanced:Perspective" xmi:id="_o86SxOTnEeSUp6JJWmQY_w" contributorURI="platform:/plugin/c1_dependinject" selectedElement="_o86SxeTnEeSUp6JJWmQY_w">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_o86SxeTnEeSUp6JJWmQY_w" contributorURI="platform:/plugin/c1_dependinject" selectedElement="_o86SxuTnEeSUp6JJWmQY_w">
+          <children xsi:type="basic:PartStack" xmi:id="_o86SxuTnEeSUp6JJWmQY_w" elementId="PartStack@4b40f651" contributorURI="platform:/plugin/c1_dependinject" containerData="10000" selectedElement="_o86Sx-TnEeSUp6JJWmQY_w">
+            <tags>active</tags>
+            <children xsi:type="basic:Part" xmi:id="_o86Sx-TnEeSUp6JJWmQY_w" contributorURI="platform:/plugin/c1_dependinject" contributionURI="bundleclass://c1_dependinject/com.cgi.example.e4.rcp.c1_dependinject.parts.DependencyInjection" label="Dependency Injection">
+              <tags>active</tags>
+            </children>
+          </children>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_o86SyOTnEeSUp6JJWmQY_w" elementId="menu:org.eclipse.ui.main.menu" contributorURI="platform:/plugin/c1_dependinject">
+      <children xsi:type="menu:Menu" xmi:id="_o86SyeTnEeSUp6JJWmQY_w" contributorURI="platform:/plugin/c1_dependinject" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_o86SyuTnEeSUp6JJWmQY_w" contributorURI="platform:/plugin/c1_dependinject" label="Save" iconURI="platform:/plugin/c1_dependinject/icons/save_edit.png" command="_o8650OTnEeSUp6JJWmQY_w"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_o86Sy-TnEeSUp6JJWmQY_w" contributorURI="platform:/plugin/c1_dependinject" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_o86SzOTnEeSUp6JJWmQY_w" contributorURI="platform:/plugin/c1_dependinject" label="About" command="_o8650eTnEeSUp6JJWmQY_w"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_o86SzeTnEeSUp6JJWmQY_w" contributorURI="platform:/plugin/c1_dependinject">
+      <children xsi:type="menu:ToolBar" xmi:id="_o86SzuTnEeSUp6JJWmQY_w" elementId="toolbar:org.eclipse.ui.main.toolbar" contributorURI="platform:/plugin/c1_dependinject">
+        <tags>Draggable</tags>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_o86Sz-TnEeSUp6JJWmQY_w" contributorURI="platform:/plugin/c1_dependinject" iconURI="platform:/plugin/c1_dependinject/icons/save_edit.png" enabled="false" command="_o8650OTnEeSUp6JJWmQY_w"/>
+      </children>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_o86S0OTnEeSUp6JJWmQY_w" elementId="com.cgi.example.e4.rcp.c1_dependinject.handler.saveCommand" contributorURI="platform:/plugin/c1_dependinject" contributionURI="bundleclass://c1_dependinject/com.cgi.example.e4.rcp.c1_dependinject.handlers.SaveHandler" command="_o8650OTnEeSUp6JJWmQY_w"/>
+  <handlers xmi:id="_o86S0eTnEeSUp6JJWmQY_w" elementId="com.cgi.example.e4.rcp.c1_dependinject.handler.aboutCommand" contributorURI="platform:/plugin/c1_dependinject" contributionURI="bundleclass://c1_dependinject/com.cgi.example.e4.rcp.c1_dependinject.handlers.AboutHandler" command="_o8650eTnEeSUp6JJWmQY_w"/>
+  <bindingTables xmi:id="_o86S0uTnEeSUp6JJWmQY_w" contributorURI="platform:/plugin/c1_dependinject" bindingContext="_o86S1-TnEeSUp6JJWmQY_w">
+    <bindings xmi:id="_o86S0-TnEeSUp6JJWmQY_w" contributorURI="platform:/plugin/c1_dependinject" keySequence="M1+Q"/>
+    <bindings xmi:id="_o86S1OTnEeSUp6JJWmQY_w" contributorURI="platform:/plugin/c1_dependinject" keySequence="M1+O"/>
+    <bindings xmi:id="_o86S1eTnEeSUp6JJWmQY_w" contributorURI="platform:/plugin/c1_dependinject" keySequence="M1+S" command="_o8650OTnEeSUp6JJWmQY_w"/>
+    <bindings xmi:id="_o86S1uTnEeSUp6JJWmQY_w" contributorURI="platform:/plugin/c1_dependinject" keySequence="M1+A" command="_o8650eTnEeSUp6JJWmQY_w"/>
+  </bindingTables>
+  <rootContext xmi:id="_o86S1-TnEeSUp6JJWmQY_w" elementId="org.eclipse.ui.contexts.dialogAndWindow" contributorURI="platform:/plugin/c1_dependinject" name="In Dialog and Windows">
+    <children xmi:id="_o86S2OTnEeSUp6JJWmQY_w" elementId="org.eclipse.ui.contexts.window" contributorURI="platform:/plugin/c1_dependinject" name="In Windows"/>
+    <children xmi:id="_o86S2eTnEeSUp6JJWmQY_w" elementId="org.eclipse.ui.contexts.dialog" contributorURI="platform:/plugin/c1_dependinject" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_o8650OTnEeSUp6JJWmQY_w" elementId="org.eclipse.ui.file.save" contributorURI="platform:/plugin/c1_dependinject" commandName="saveCommand"/>
+  <commands xmi:id="_o8650eTnEeSUp6JJWmQY_w" elementId="org.eclipse.ui.help.aboutAction" contributorURI="platform:/plugin/c1_dependinject" commandName="aboutCommand"/>
+  <addons xmi:id="_o8650uTnEeSUp6JJWmQY_w" elementId="org.eclipse.e4.core.commands.service" contributorURI="platform:/plugin/c1_dependinject" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_o8650-TnEeSUp6JJWmQY_w" elementId="org.eclipse.e4.ui.contexts.service" contributorURI="platform:/plugin/c1_dependinject" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_o8651OTnEeSUp6JJWmQY_w" elementId="org.eclipse.e4.ui.bindings.service" contributorURI="platform:/plugin/c1_dependinject" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_o8651eTnEeSUp6JJWmQY_w" elementId="org.eclipse.e4.ui.workbench.commands.model" contributorURI="platform:/plugin/c1_dependinject" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_o8651uTnEeSUp6JJWmQY_w" elementId="org.eclipse.e4.ui.workbench.handler.model" contributorURI="platform:/plugin/c1_dependinject" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_o8651-TnEeSUp6JJWmQY_w" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributorURI="platform:/plugin/c1_dependinject" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_o8652OTnEeSUp6JJWmQY_w" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributorURI="platform:/plugin/c1_dependinject" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>

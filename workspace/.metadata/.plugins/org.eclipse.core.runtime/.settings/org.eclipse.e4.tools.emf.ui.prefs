@@ -1,0 +1,14 @@
+DIALOG_HEIGHT=511
+DIALOG_WIDTH=677
+DIALOG_X_ORIGIN=8
+DIALOG_Y_ORIGIN=8
+autoCreateElementId=true
+eclipse.preferences.version=1
+list-tab-remember-columns=false
+list-tab-remember-filters=false
+notRenderedColor=200,200,200
+notVisibleAndRenderedColor=200,200,200
+notVisibleColor=200,200,200
+searchScope=PROJECT
+searchScopes=[PROJECT]
+tab-form-search-show=false
