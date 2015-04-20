@@ -6,9 +6,7 @@
         <children xsi:type="basic:PartSashContainer" xmi:id="_GhnPAecmEeS_hNc8afLGTQ" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_GhnPAucmEeS_hNc8afLGTQ" elementId="editors">
             <children xsi:type="basic:Part" xmi:id="_2YhHoOcpEeS_hNc8afLGTQ" elementId="c2_applicationmodel.part.samplePart2" label="Text editor"/>
-            <children xsi:type="basic:Part" xmi:id="_mE1qgOc5EeS_hNc8afLGTQ" elementId="c2_applicationmodel.part.javaEditor" label="Java editor">
-              <handlers xmi:id="_ngmd4Oc5EeS_hNc8afLGTQ" elementId="c2_applicationmodel.handler.0" contributionURI="bundleclass://c2_applicationmodel/c2_applicationmodel.parts.editor.java.handler.AboutJavaHandler" command="_GhnO9ecmEeS_hNc8afLGTQ"/>
-            </children>
+            <children xsi:type="basic:Part" xmi:id="_mE1qgOc5EeS_hNc8afLGTQ" elementId="c2_applicationmodel.part.javaEditor" label="Java editor"/>
           </children>
           <children xsi:type="basic:PartStack" xmi:id="_lZZUEOcpEeS_hNc8afLGTQ" elementId="galleries">
             <children xsi:type="basic:Part" xmi:id="_7-stAOcpEeS_hNc8afLGTQ" elementId="c2_applicationmodel.part.jpgImages" label="JPG images"/>
