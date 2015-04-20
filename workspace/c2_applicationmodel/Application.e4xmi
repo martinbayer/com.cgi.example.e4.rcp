@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_Ghmn4OcmEeS_hNc8afLGTQ" elementId="org.eclipse.e4.ide.application" bindingContexts="_Ghmn6ecmEeS_hNc8afLGTQ">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_Ghmn4ecmEeS_hNc8afLGTQ" label="c2_applicationmodel" width="500" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_GhnO_-cmEeS_hNc8afLGTQ">
+      <children xsi:type="advanced:Perspective" xmi:id="_GhnPAOcmEeS_hNc8afLGTQ">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_GhnPAecmEeS_hNc8afLGTQ" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_GhnPAucmEeS_hNc8afLGTQ" elementId="editors">
+            <children xsi:type="basic:Part" xmi:id="_2YhHoOcpEeS_hNc8afLGTQ" elementId="c2_applicationmodel.part.samplePart2" label="Text editor"/>
+            <children xsi:type="basic:Part" xmi:id="_mE1qgOc5EeS_hNc8afLGTQ" elementId="c2_applicationmodel.part.javaEditor" label="Java editor">
+              <handlers xmi:id="_ngmd4Oc5EeS_hNc8afLGTQ" elementId="c2_applicationmodel.handler.0" contributionURI="bundleclass://c2_applicationmodel/c2_applicationmodel.parts.editor.java.handler.AboutJavaHandler" command="_GhnO9ecmEeS_hNc8afLGTQ"/>
+            </children>
+          </children>
+          <children xsi:type="basic:PartStack" xmi:id="_lZZUEOcpEeS_hNc8afLGTQ" elementId="galleries">
+            <children xsi:type="basic:Part" xmi:id="_7-stAOcpEeS_hNc8afLGTQ" elementId="c2_applicationmodel.part.jpgImages" label="JPG images"/>
+            <children xsi:type="basic:Part" xmi:id="_aOKqYOcsEeS_hNc8afLGTQ" elementId="c2_applicationmodel.part.pngImages" label="PNG images"/>
+          </children>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_GhnO-OcmEeS_hNc8afLGTQ" elementId="menu:org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_GhnO-ecmEeS_hNc8afLGTQ" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_GhnO_OcmEeS_hNc8afLGTQ" label="Quit" command="_Ghmn7OcmEeS_hNc8afLGTQ"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_GhnO_ecmEeS_hNc8afLGTQ" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_GhnO_ucmEeS_hNc8afLGTQ" label="About" command="_GhnO9ecmEeS_hNc8afLGTQ"/>
+      </children>
+    </mainMenu>
+  </children>
+  <handlers xmi:id="_Ghmn7ecmEeS_hNc8afLGTQ" elementId="c2_applicationmodel.handler.quitCommand" contributionURI="bundleclass://c2_applicationmodel/c2_applicationmodel.handlers.QuitHandler" command="_Ghmn7OcmEeS_hNc8afLGTQ"/>
+  <handlers xmi:id="_GhnO9ucmEeS_hNc8afLGTQ" elementId="c2_applicationmodel.handler.aboutCommand" contributionURI="bundleclass://c2_applicationmodel/c2_applicationmodel.handlers.AboutHandler" command="_GhnO9ecmEeS_hNc8afLGTQ"/>
+  <bindingTables xmi:id="_Ghmn7ucmEeS_hNc8afLGTQ" bindingContext="_Ghmn6ecmEeS_hNc8afLGTQ">
+    <bindings xmi:id="_Ghmn7-cmEeS_hNc8afLGTQ" keySequence="M1+Q" command="_Ghmn7OcmEeS_hNc8afLGTQ"/>
+    <bindings xmi:id="_GhnO8ecmEeS_hNc8afLGTQ" keySequence="M1+O"/>
+    <bindings xmi:id="_GhnO9OcmEeS_hNc8afLGTQ" keySequence="M1+S"/>
+    <bindings xmi:id="_GhnO9-cmEeS_hNc8afLGTQ" keySequence="M1+A" command="_GhnO9ecmEeS_hNc8afLGTQ"/>
+  </bindingTables>
+  <rootContext xmi:id="_Ghmn6ecmEeS_hNc8afLGTQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_Ghmn6ucmEeS_hNc8afLGTQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_Ghmn6-cmEeS_hNc8afLGTQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_Ghmn7OcmEeS_hNc8afLGTQ" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
+  <commands xmi:id="_GhnO9ecmEeS_hNc8afLGTQ" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <addons xmi:id="_Ghmn4ucmEeS_hNc8afLGTQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_Ghmn4-cmEeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_Ghmn5OcmEeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_Ghmn5ecmEeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_Ghmn5ucmEeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_Ghmn5-cmEeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_Ghmn6OcmEeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+  <addons xmi:id="_pAgHMOc1EeS_hNc8afLGTQ" elementId="c2_applicationmodel.addon.0" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.dndaddon.DnDAddon"/>
+  <addons xmi:id="_x1nRQOc2EeS_hNc8afLGTQ" elementId="c2_applicationmodel.addon.1" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.cleanupaddon.CleanupAddon"/>
+</application:Application>
