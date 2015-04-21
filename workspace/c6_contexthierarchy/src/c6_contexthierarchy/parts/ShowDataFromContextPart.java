@@ -14,8 +14,12 @@ package c6_contexthierarchy.parts;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.ui.advanced.MPerspective;
+import org.eclipse.e4.ui.model.application.ui.basic.MPart;
+import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -36,10 +40,19 @@ public class ShowDataFromContextPart {
 	private Text firstNameInput, lastNameInput, emailInput;
 
 	@Inject
+	private MWindow window;
+
+	@Inject
 	private MPerspective perspective;
 
 	@Inject
+	private MPart part;
+
+	@Inject
 	private Shell shell;
+
+	@Inject
+	private MApplication application;
 
 	@PostConstruct
 	public void createComposite(Composite parent) {
@@ -88,14 +101,45 @@ public class ShowDataFromContextPart {
 		gridData.grabExcessHorizontalSpace = true;
 		emailInput.setLayoutData(gridData);
 
-		Button loadBtn = new Button(parent, SWT.NONE);
-		loadBtn.setText("Load person");
-		loadBtn.addSelectionListener(new DisplayCurrentPerson(this));
+		Button loadDataFromWorkbenchBtn = new Button(parent, SWT.NONE);
+		loadDataFromWorkbenchBtn.setText("Load data from workbench");
+		loadDataFromWorkbenchBtn.addSelectionListener(new DisplayPerson(this,
+				ContextSource.WORKBENCH));
 		gridData = new GridData();
 		gridData.horizontalSpan = 2;
 		gridData.horizontalAlignment = GridData.FILL;
 		gridData.grabExcessHorizontalSpace = true;
-		loadBtn.setLayoutData(gridData);
+		loadDataFromWorkbenchBtn.setLayoutData(gridData);
+
+		Button loadDataFromWindowBtn = new Button(parent, SWT.NONE);
+		loadDataFromWindowBtn.setText("Load data from window");
+		loadDataFromWindowBtn.addSelectionListener(new DisplayPerson(this,
+				ContextSource.WINDOW));
+		gridData = new GridData();
+		gridData.horizontalSpan = 2;
+		gridData.horizontalAlignment = GridData.FILL;
+		gridData.grabExcessHorizontalSpace = true;
+		loadDataFromWindowBtn.setLayoutData(gridData);
+
+		Button loadDataFromPerspectiveBtn = new Button(parent, SWT.NONE);
+		loadDataFromPerspectiveBtn.setText("Load data from perspective");
+		loadDataFromPerspectiveBtn.addSelectionListener(new DisplayPerson(this,
+				ContextSource.PERSPECTIVE));
+		gridData = new GridData();
+		gridData.horizontalSpan = 2;
+		gridData.horizontalAlignment = GridData.FILL;
+		gridData.grabExcessHorizontalSpace = true;
+		loadDataFromPerspectiveBtn.setLayoutData(gridData);
+
+		Button loadDataFromPartBtn = new Button(parent, SWT.NONE);
+		loadDataFromPartBtn.setText("Load data from part");
+		loadDataFromPartBtn.addSelectionListener(new DisplayPerson(this,
+				ContextSource.PART));
+		gridData = new GridData();
+		gridData.horizontalSpan = 2;
+		gridData.horizontalAlignment = GridData.FILL;
+		gridData.grabExcessHorizontalSpace = true;
+		loadDataFromPartBtn.setLayoutData(gridData);
 	}
 
 	@Focus
@@ -103,8 +147,29 @@ public class ShowDataFromContextPart {
 		firstNameInput.setFocus();
 	}
 
-	public void refreshData() {
-		Person p = perspective.getContext().get(Person.class);
+	public void refreshData(ContextSource contextSource) {
+
+		IEclipseContext ctx = null;
+		switch (contextSource) {
+		case PART:
+			ctx = part.getContext();
+			break;
+		case PERSPECTIVE:
+			ctx = perspective.getContext();
+			break;
+		case WINDOW:
+			ctx = window.getContext();
+			break;
+		case WORKBENCH:
+			ctx = application.getContext();
+			break;
+		default:
+			MessageDialog.openWarning(shell, "Invalid context",
+					"Invalid context found:" + contextSource);
+			return;
+
+		}
+		Person p = ctx.get(Person.class);
 		if (p == null) {
 			MessageDialog.openWarning(shell, "No Person for perspective",
 					"No person for current perspective found");
@@ -115,16 +180,19 @@ public class ShowDataFromContextPart {
 		emailInput.setText(p.getEmail());
 	}
 
-	class DisplayCurrentPerson extends SelectionAdapter {
+	class DisplayPerson extends SelectionAdapter {
 		private ShowDataFromContextPart part;
+		private ContextSource contextSource;
 
-		public DisplayCurrentPerson(ShowDataFromContextPart part) {
+		public DisplayPerson(ShowDataFromContextPart part,
+				ContextSource contextSource) {
 			this.part = part;
+			this.contextSource = contextSource;
 		}
 
 		@Override
 		public void widgetSelected(SelectionEvent e) {
-			part.refreshData();
+			part.refreshData(this.contextSource);
 		}
 	}
 }
