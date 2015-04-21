@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_9W_gUOgTEeS_hNc8afLGTQ" elementId="org.eclipse.e4.ide.application" bindingContexts="_9W_gWegTEeS_hNc8afLGTQ">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_9W_gUegTEeS_hNc8afLGTQ" label="c4_dynamicmodel" width="500" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_9W_gcOgTEeS_hNc8afLGTQ">
+      <children xsi:type="advanced:Perspective" xmi:id="_9W_gcegTEeS_hNc8afLGTQ">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_9W_gcugTEeS_hNc8afLGTQ">
+          <children xsi:type="basic:PartStack" xmi:id="_9W_gc-gTEeS_hNc8afLGTQ" elementId="allwindowsstack">
+            <children xsi:type="basic:Part" xmi:id="_9W_gdOgTEeS_hNc8afLGTQ" elementId="editorPartID" contributionURI="bundleclass://c4_dynamicmodel/c4_dynamicmodel.parts.SamplePart" label="Sample Part"/>
+          </children>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_9W_gaegTEeS_hNc8afLGTQ" elementId="menu:org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_9W_gaugTEeS_hNc8afLGTQ" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_9W_ga-gTEeS_hNc8afLGTQ" label="Add editor" iconURI="platform:/plugin/c4_dynamicmodel/icons/sample.png" command="_9W_gYOgTEeS_hNc8afLGTQ"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_9W_gdegTEeS_hNc8afLGTQ">
+      <children xsi:type="menu:ToolBar" xmi:id="_9W_gdugTEeS_hNc8afLGTQ" elementId="toolbar:org.eclipse.ui.main.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_9W_gd-gTEeS_hNc8afLGTQ" iconURI="platform:/plugin/c4_dynamicmodel/icons/sample.png" command="_9W_gYOgTEeS_hNc8afLGTQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_9W_geOgTEeS_hNc8afLGTQ" iconURI="platform:/plugin/c4_dynamicmodel/icons/save_edit.png"/>
+      </children>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_9W_gYegTEeS_hNc8afLGTQ" elementId="c4_dynamicmodel.handler.addEditorCommand" contributionURI="bundleclass://c4_dynamicmodel/c4_dynamicmodel.handlers.AddEditorHandler" command="_9W_gYOgTEeS_hNc8afLGTQ"/>
+  <bindingTables xmi:id="_9W_gXugTEeS_hNc8afLGTQ" bindingContext="_9W_gWegTEeS_hNc8afLGTQ">
+    <bindings xmi:id="_9W_gX-gTEeS_hNc8afLGTQ" keySequence="M1+Q"/>
+    <bindings xmi:id="_9W_gYugTEeS_hNc8afLGTQ" keySequence="M1+O" command="_9W_gYOgTEeS_hNc8afLGTQ"/>
+    <bindings xmi:id="_9W_gZegTEeS_hNc8afLGTQ" keySequence="M1+S"/>
+    <bindings xmi:id="_9W_gaOgTEeS_hNc8afLGTQ" keySequence="M1+A"/>
+  </bindingTables>
+  <rootContext xmi:id="_9W_gWegTEeS_hNc8afLGTQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_9W_gWugTEeS_hNc8afLGTQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_9W_gW-gTEeS_hNc8afLGTQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_9W_gYOgTEeS_hNc8afLGTQ" elementId="c4_dynamicmodel.addEditor" commandName="addEditorCommand"/>
+  <addons xmi:id="_9W_gUugTEeS_hNc8afLGTQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_9W_gU-gTEeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_9W_gVOgTEeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_9W_gVegTEeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_9W_gVugTEeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_9W_gV-gTEeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_9W_gWOgTEeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>

@@ -11,3 +11,4 @@ prezentation/*.pdf
 prezentation/*.snm
 prezentation/*.toc
 runtime-*.product
+.recommenders/
