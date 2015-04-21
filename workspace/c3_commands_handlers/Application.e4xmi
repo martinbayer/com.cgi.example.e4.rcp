@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_2SG7oOc_EeS_hNc8afLGTQ" elementId="org.eclipse.e4.ide.application" bindingContexts="_2SG7qec_EeS_hNc8afLGTQ">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_2SG7oec_EeS_hNc8afLGTQ" label="c3_commands_handlers" width="500" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_2SG7wOc_EeS_hNc8afLGTQ">
+      <children xsi:type="advanced:Perspective" xmi:id="_2SG7wec_EeS_hNc8afLGTQ">
+        <children xsi:type="basic:PartStack" xmi:id="_zXhCsOdTEeS_hNc8afLGTQ" elementId="c3_commands_handlers.partstack.0">
+          <children xsi:type="basic:Part" xmi:id="_zxx80OdTEeS_hNc8afLGTQ" elementId="c3_commands_handlers.part.dbViewer" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.parts.DBViewPart" label="DB Viewer">
+            <handlers xmi:id="_JqDq4OgIEeS_hNc8afLGTQ" elementId="c3_commands_handlers.handler.0" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.parts.handler.DBViewPartOpenHandler" command="_2SG7sOc_EeS_hNc8afLGTQ"/>
+          </children>
+          <children xsi:type="basic:Part" xmi:id="_0I9twOdTEeS_hNc8afLGTQ" elementId="c3_commands_handlers.part.eclipseViewer" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.parts.EclipseViewPart" label="Eclipse viewer">
+            <handlers xmi:id="_tWfcsOgJEeS_hNc8afLGTQ" elementId="c3_commands_handlers.handler.1" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.parts.logic.EclipseViewPartViewHandler" command="_2SG7sOc_EeS_hNc8afLGTQ"/>
+          </children>
+          <children xsi:type="basic:Part" xmi:id="_Oh1e8OdUEeS_hNc8afLGTQ" elementId="c3_commands_handlers.part.txtViewer" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.parts.TxtViewPart" label="Txt viewer"/>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_2SG7uec_EeS_hNc8afLGTQ" elementId="menu:org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_2SG7uuc_EeS_hNc8afLGTQ" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_2SG7u-c_EeS_hNc8afLGTQ" label="Open" iconURI="platform:/plugin/c3_commands_handlers/icons/sample.png" command="_2SG7sOc_EeS_hNc8afLGTQ"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_2SG7vOc_EeS_hNc8afLGTQ" label="Save" iconURI="platform:/plugin/c3_commands_handlers/icons/save_edit.png" command="_2SG7s-c_EeS_hNc8afLGTQ"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_2SG7vec_EeS_hNc8afLGTQ" label="Quit" command="_2SG7rOc_EeS_hNc8afLGTQ"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_2SG7vuc_EeS_hNc8afLGTQ" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_2SG7v-c_EeS_hNc8afLGTQ" label="About" command="_2SG7tuc_EeS_hNc8afLGTQ"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_2SG7xec_EeS_hNc8afLGTQ">
+      <children xsi:type="menu:ToolBar" xmi:id="_2SG7xuc_EeS_hNc8afLGTQ" elementId="toolbar:org.eclipse.ui.main.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_2SG7x-c_EeS_hNc8afLGTQ" iconURI="platform:/plugin/c3_commands_handlers/icons/sample.png" command="_2SG7sOc_EeS_hNc8afLGTQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_2SG7yOc_EeS_hNc8afLGTQ" iconURI="platform:/plugin/c3_commands_handlers/icons/save_edit.png" command="_2SG7s-c_EeS_hNc8afLGTQ"/>
+      </children>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_2SG7rec_EeS_hNc8afLGTQ" elementId="c3_commands_handlers.handler.quitCommand" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.handlers.QuitHandler" command="_2SG7rOc_EeS_hNc8afLGTQ"/>
+  <handlers xmi:id="_2SG7sec_EeS_hNc8afLGTQ" elementId="c3_commands_handlers.handler.openCommand" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.handlers.OpenHandler" command="_2SG7sOc_EeS_hNc8afLGTQ"/>
+  <handlers xmi:id="_2SG7tOc_EeS_hNc8afLGTQ" elementId="c3_commands_handlers.handler.saveCommand" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.handlers.SaveHandler" command="_2SG7s-c_EeS_hNc8afLGTQ"/>
+  <handlers xmi:id="_2SG7t-c_EeS_hNc8afLGTQ" elementId="c3_commands_handlers.handler.aboutCommand" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.handlers.AboutHandler" command="_2SG7tuc_EeS_hNc8afLGTQ"/>
+  <bindingTables xmi:id="_2SG7ruc_EeS_hNc8afLGTQ" bindingContext="_2SG7qec_EeS_hNc8afLGTQ">
+    <bindings xmi:id="_2SG7r-c_EeS_hNc8afLGTQ" keySequence="M1+Q" command="_2SG7rOc_EeS_hNc8afLGTQ"/>
+    <bindings xmi:id="_2SG7suc_EeS_hNc8afLGTQ" keySequence="M1+O" command="_2SG7sOc_EeS_hNc8afLGTQ"/>
+    <bindings xmi:id="_2SG7tec_EeS_hNc8afLGTQ" keySequence="M1+S" command="_2SG7s-c_EeS_hNc8afLGTQ"/>
+    <bindings xmi:id="_2SG7uOc_EeS_hNc8afLGTQ" keySequence="M1+A" command="_2SG7tuc_EeS_hNc8afLGTQ"/>
+  </bindingTables>
+  <rootContext xmi:id="_2SG7qec_EeS_hNc8afLGTQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_2SG7quc_EeS_hNc8afLGTQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_2SG7q-c_EeS_hNc8afLGTQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_2SG7rOc_EeS_hNc8afLGTQ" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
+  <commands xmi:id="_2SG7sOc_EeS_hNc8afLGTQ" elementId="c3_commands_handlers.open" commandName="openCommand"/>
+  <commands xmi:id="_2SG7s-c_EeS_hNc8afLGTQ" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
+  <commands xmi:id="_2SG7tuc_EeS_hNc8afLGTQ" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <addons xmi:id="_2SG7ouc_EeS_hNc8afLGTQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_2SG7o-c_EeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_2SG7pOc_EeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_2SG7pec_EeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_2SG7puc_EeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_2SG7p-c_EeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_2SG7qOc_EeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+  <addons xmi:id="_5whRQOgFEeS_hNc8afLGTQ" elementId="c3_commands_handlers.addon.persondbstore" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.parts.addon.PersonDBStoreAddon"/>
+</application:Application>
