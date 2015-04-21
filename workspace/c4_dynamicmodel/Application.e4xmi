@@ -18,7 +18,6 @@
     <trimBars xmi:id="_9W_gdegTEeS_hNc8afLGTQ">
       <children xsi:type="menu:ToolBar" xmi:id="_9W_gdugTEeS_hNc8afLGTQ" elementId="toolbar:org.eclipse.ui.main.toolbar">
         <children xsi:type="menu:HandledToolItem" xmi:id="_9W_gd-gTEeS_hNc8afLGTQ" iconURI="platform:/plugin/c4_dynamicmodel/icons/sample.png" command="_9W_gYOgTEeS_hNc8afLGTQ"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_9W_geOgTEeS_hNc8afLGTQ" iconURI="platform:/plugin/c4_dynamicmodel/icons/save_edit.png"/>
       </children>
     </trimBars>
   </children>
