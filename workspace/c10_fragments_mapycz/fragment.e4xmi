@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_YFzUEOm7EeSom7EThXrK9A">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Y3kvQOm7EeSom7EThXrK9A" featurename="handlers" parentElementId="c10_fragments.e4.application">
+    <elements xsi:type="commands:Handler" xmi:id="_i0wxIOm7EeSom7EThXrK9A" elementId="c10_fragments_mapycz.handler.0" contributionURI="bundleclass://c10_fragments_mapycz/c10_fragments_mapycz.handlers.OpenMapyczMapHandler" command="_f9uSkOm7EeSom7EThXrK9A"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_bhYqIOm7EeSom7EThXrK9A" featurename="commands" parentElementId="c10_fragments.e4.application">
+    <elements xsi:type="commands:Command" xmi:id="_f9uSkOm7EeSom7EThXrK9A" elementId="c10_fragments_mapycz.command.displayMapycz" commandName="Display mapy.cz"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_k3XiEOm7EeSom7EThXrK9A" featurename="children" parentElementId="c10_fragments.menu.maps">
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_puqBIOm7EeSom7EThXrK9A" elementId="c10_fragments_mapycz.handledmenuitem.displayMapycz" label="Display mapy.cz" command="_f9uSkOm7EeSom7EThXrK9A"/>
+  </fragments>
+</fragment:ModelFragments>

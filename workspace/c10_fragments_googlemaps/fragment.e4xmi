@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_Po66QOmuEeSom7EThXrK9A">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Y4kEMOmvEeSom7EThXrK9A" featurename="handlers" parentElementId="c10_fragments.e4.application">
+    <elements xsi:type="commands:Handler" xmi:id="_fHYW4OmvEeSom7EThXrK9A" elementId="c10_fragments_googlemaps.handler.0" contributionURI="bundleclass://c10_fragments_googlemaps/c10_fragments_googlemaps.handlers.OpenGoogleMapHandler" command="_i_WG8OmvEeSom7EThXrK9A"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_guxLcOmvEeSom7EThXrK9A" featurename="commands" parentElementId="c10_fragments.e4.application">
+    <elements xsi:type="commands:Command" xmi:id="_i_WG8OmvEeSom7EThXrK9A" elementId="c10_fragments_googlemaps.command.openGoogleMap" commandName="Open Google map"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Tz2CkOmuEeSom7EThXrK9A" featurename="children" parentElementId="c10_fragments.menu.maps">
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_bYNy8OmuEeSom7EThXrK9A" elementId="c10_fragments_googlemaps.handledmenuitem.crrrroror" label="Display google maps" command="_i_WG8OmvEeSom7EThXrK9A"/>
+  </fragments>
+</fragment:ModelFragments>
