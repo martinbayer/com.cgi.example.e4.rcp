@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmi:id="_2bFUsOjwEeSMYOIPyIsyug" elementId="org.eclipse.e4.ide.application" bindingContexts="_2bFUuejwEeSMYOIPyIsyug">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_2bFUsejwEeSMYOIPyIsyug" label="c9_extensions" width="500" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_2bFU0OjwEeSMYOIPyIsyug">
+      <children xsi:type="advanced:Perspective" xmi:id="_2bFU0ejwEeSMYOIPyIsyug">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_2bFU0ujwEeSMYOIPyIsyug">
+          <children xsi:type="basic:PartStack" xmi:id="_2bFU0-jwEeSMYOIPyIsyug">
+            <children xsi:type="basic:Part" xmi:id="_2bFU1OjwEeSMYOIPyIsyug" contributionURI="bundleclass://c9_extensions/c9_extensions.parts.HelpMePart" label="HelpMePart"/>
+          </children>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_2bFUyejwEeSMYOIPyIsyug" elementId="menu:org.eclipse.ui.main.menu"/>
+  </children>
+  <handlers xmi:id="_2bFUwejwEeSMYOIPyIsyug" elementId="c9_extensions.handler.helpme" contributionURI="bundleclass://c9_extensions/c9_extensions.handlers.HelpMeHandler" command="_2bFUwOjwEeSMYOIPyIsyug"/>
+  <bindingTables xmi:id="_2bFUvujwEeSMYOIPyIsyug" bindingContext="_2bFUuejwEeSMYOIPyIsyug">
+    <bindings xmi:id="_2bFUv-jwEeSMYOIPyIsyug" keySequence="M1+Q"/>
+    <bindings xmi:id="_2bFUwujwEeSMYOIPyIsyug" keySequence="M1+O" command="_2bFUwOjwEeSMYOIPyIsyug"/>
+    <bindings xmi:id="_2bFUxejwEeSMYOIPyIsyug" keySequence="M1+S"/>
+    <bindings xmi:id="_2bFUyOjwEeSMYOIPyIsyug" keySequence="M1+A"/>
+  </bindingTables>
+  <rootContext xmi:id="_2bFUuejwEeSMYOIPyIsyug" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_2bFUuujwEeSMYOIPyIsyug" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_2bFUu-jwEeSMYOIPyIsyug" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_2bFUwOjwEeSMYOIPyIsyug" elementId="c9_extensions.helpme" commandName="helpMeCommand"/>
+  <addons xmi:id="_2bFUsujwEeSMYOIPyIsyug" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_2bFUs-jwEeSMYOIPyIsyug" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_2bFUtOjwEeSMYOIPyIsyug" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_2bFUtejwEeSMYOIPyIsyug" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_2bFUtujwEeSMYOIPyIsyug" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_2bFUt-jwEeSMYOIPyIsyug" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_2bFUuOjwEeSMYOIPyIsyug" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>
