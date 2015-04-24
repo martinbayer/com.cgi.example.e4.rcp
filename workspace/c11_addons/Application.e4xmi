@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_TWOpwOm_EeSom7EThXrK9A" elementId="org.eclipse.e4.ide.application" bindingContexts="_TWPQ0Om_EeSom7EThXrK9A">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_TWOpwem_EeSom7EThXrK9A" label="c11_addons" width="500" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_TWP35Om_EeSom7EThXrK9A">
+      <children xsi:type="advanced:Perspective" xmi:id="_TWP35em_EeSom7EThXrK9A">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_TWP35um_EeSom7EThXrK9A">
+          <children xsi:type="basic:PartStack" xmi:id="_TWP35-m_EeSom7EThXrK9A">
+            <children xsi:type="basic:Part" xmi:id="_TWP36Om_EeSom7EThXrK9A" contributionURI="bundleclass://c11_addons/c11_addons.parts.AddPersonPart" label="Person part"/>
+          </children>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_TWPQ4Om_EeSom7EThXrK9A" elementId="menu:org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_TWPQ4em_EeSom7EThXrK9A" label="Storage">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_TWP34-m_EeSom7EThXrK9A" label="Reconnect person storage" command="_TWPQ3em_EeSom7EThXrK9A"/>
+      </children>
+    </mainMenu>
+  </children>
+  <handlers xmi:id="_TWPQ3um_EeSom7EThXrK9A" elementId="c11_addons.handler.aboutCommand" contributionURI="bundleclass://c11_addons/c11_addons.handlers.ReconnectPersonStorageHandler" command="_TWPQ3em_EeSom7EThXrK9A"/>
+  <bindingTables xmi:id="_TWPQ1em_EeSom7EThXrK9A" bindingContext="_TWPQ0Om_EeSom7EThXrK9A">
+    <bindings xmi:id="_TWPQ3-m_EeSom7EThXrK9A" keySequence="M1+R" command="_TWPQ3em_EeSom7EThXrK9A"/>
+  </bindingTables>
+  <rootContext xmi:id="_TWPQ0Om_EeSom7EThXrK9A" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_TWPQ0em_EeSom7EThXrK9A" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_TWPQ0um_EeSom7EThXrK9A" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_TWPQ3em_EeSom7EThXrK9A" elementId="org.eclipse.ui.help.reconnectPersonStorage" commandName="reconnectPersonStorage"/>
+  <addons xmi:id="_TWOpwum_EeSom7EThXrK9A" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_TWOpw-m_EeSom7EThXrK9A" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_TWOpxOm_EeSom7EThXrK9A" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_TWOpxem_EeSom7EThXrK9A" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_TWOpxum_EeSom7EThXrK9A" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_TWOpx-m_EeSom7EThXrK9A" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_TWOpyOm_EeSom7EThXrK9A" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+  <addons xmi:id="_3PtU4OnHEeSom7EThXrK9A" elementId="c11_addons.addon.storageinit" contributionURI="bundleclass://c11_addons/c11_addons.addons.InitStorageAddon"/>
+  <addons xmi:id="_HtFr4OpNEeS7Tpasak6A2g" elementId="c11_addons.addon.closeresourcesonshutdown" contributionURI="bundleclass://c11_addons/c11_addons.addons.ReconectPersonStorageAddon"/>
+</application:Application>

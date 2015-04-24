@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: C11_addons_storage_DB
+Bundle-SymbolicName: c11_addons_storage_DB
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: c11_addons_storage;bundle-version="1.0.0"
+Export-Package: c11_addons_storage_DB

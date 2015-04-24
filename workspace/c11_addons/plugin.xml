@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            name="c11_addons"
+            application="org.eclipse.e4.ui.workbench.swt.E4Application">
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/c11_addons/css/default.css">
+         </property>
+         <property
+               name="lifeCycleURI"
+               value="bundleclass://c11_addons/c11_addons.LifeCycleManager">
+         </property>
+         <property
+               name="appName"
+               value="c11_addons">
+         </property>
+      </product>
+   </extension>
+
+</plugin>
