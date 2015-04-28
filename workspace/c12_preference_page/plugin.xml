@@ -9,5 +9,12 @@
             uri="fragment.e4xmi">
       </fragment>
    </extension>
+   <extension
+         point="c12_preference_core.preferencePage">
+      <client
+            class="com.cgi.example.e4.rcp.c12_preference_page.PreferencePage"
+            id="c12_preference_page.preferences">
+      </client>
+   </extension>
 
 </plugin>
