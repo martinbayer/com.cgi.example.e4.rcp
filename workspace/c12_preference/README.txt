@@ -1,0 +1,1 @@
+Example extension handling pluggable preference pages.
