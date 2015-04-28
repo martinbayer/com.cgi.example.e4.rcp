@@ -15,6 +15,11 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.osgi.service.prefs.BackingStoreException;
 
+/**
+ * Configures label on "Hello" part.
+ * 
+ * @author Tomáš Vejpustek
+ */
 public class PreferencePage extends org.eclipse.jface.preference.PreferencePage {
 	@Inject
 	@Preference

@@ -11,9 +11,18 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 
+/**
+ * Contains simple text which can be configured.
+ * 
+ * @author Tomáš Vejpustek
+ *
+ */
 public class Part {
 	private Label label;
 
+	/**
+	 * Create part components.
+	 */
 	@PostConstruct
 	public void createComponents(Composite parent,
 			@Preference(value = "text") String text) {
@@ -21,6 +30,9 @@ public class Part {
 		label.setText(text);
 	}
 	
+	/**
+	 * Listen for preference change.
+	 */
 	@Inject
 	@Optional
 	public void preferenceChanged(@UIEventTopic(PreferenceTopic.CHANGE) Object something,
