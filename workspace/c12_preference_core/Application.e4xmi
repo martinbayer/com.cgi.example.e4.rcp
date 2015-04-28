@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
-<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_Fqyt0O2LEeSbp4kqQoWykw" elementId="c12_preference_core.application">
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_Fqyt0O2LEeSbp4kqQoWykw" elementId="c12_preference_core.application">
   <children xsi:type="basic:TrimmedWindow" xmi:id="_LZdg0O2LEeSbp4kqQoWykw" elementId="c12_preference_core.trimmedwindow" label="C12 Preference" x="100" y="100" width="800" height="600">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_l7DuMO2hEeSvZaYA2Ehgmw" elementId="c12_preference_core.perspectivestack">
+      <children xsi:type="advanced:Perspective" xmi:id="_m1CqMO2hEeSvZaYA2Ehgmw" elementId="c12_preference_core.perspective">
+        <children xsi:type="basic:PartStack" xmi:id="_oVvA4O2hEeSvZaYA2Ehgmw" elementId="c12_preference_core.partstack"/>
+      </children>
+    </children>
     <mainMenu xmi:id="_eKXzYO2REeSvZaYA2Ehgmw" elementId="org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_gbCOcO2REeSvZaYA2Ehgmw" elementId="org.eclipse.ui.file.menu" label="File">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_BxVEwO2SEeSvZaYA2Ehgmw" elementId="c12_preference_core.handledmenuitem.preference" label="Preferences" command="_zJ0o0O2REeSvZaYA2Ehgmw"/>
