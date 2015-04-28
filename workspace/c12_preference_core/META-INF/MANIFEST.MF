@@ -4,3 +4,5 @@ Bundle-Name: C12 Preference Core
 Bundle-SymbolicName: c12_preference_core;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.e4.core.di;bundle-version="1.4.0",
+ org.eclipse.e4.ui.workbench;bundle-version="1.2.2"
