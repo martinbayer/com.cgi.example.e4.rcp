@@ -10,6 +10,7 @@
     </mainMenu>
   </children>
   <handlers xmi:id="_bXwFUO2SEeSvZaYA2Ehgmw" elementId="c12_preference_core.handler.exit" contributionURI="bundleclass://c12_preference_core/com.cgi.example.e4.rcp.c12_preference_core.ExitHandler" command="_jZxQcO2REeSvZaYA2Ehgmw"/>
+  <handlers xmi:id="_a7d4UO2aEeSvZaYA2Ehgmw" elementId="c12_preference_core.handler.preference" contributionURI="bundleclass://c12_preference_core/com.cgi.example.e4.rcp.c12_preference_core.PreferenceHandler" command="_zJ0o0O2REeSvZaYA2Ehgmw"/>
   <commands xmi:id="_jZxQcO2REeSvZaYA2Ehgmw" elementId="org.eclipse.ui.file.exit" commandName="Exit"/>
   <commands xmi:id="_zJ0o0O2REeSvZaYA2Ehgmw" elementId="org.eclipse.ui.window.preferences" commandName="Preferences">
     <parameters xmi:id="_1G3kUO2REeSvZaYA2Ehgmw" elementId="org.eclipse.ui.window.preferences.pageid" name="Page ID"/>
