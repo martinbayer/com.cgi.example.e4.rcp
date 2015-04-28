@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="c12_preference_core.preferencePage">
+      <client
+            class="com.cgi.example.e4.rcp.c12_preference_subpage.PreferencePage"
+            id="c12_preference_subpage.preference"
+            parent="c12_preference_page.preferences">
+      </client>
+   </extension>
+
+</plugin>
