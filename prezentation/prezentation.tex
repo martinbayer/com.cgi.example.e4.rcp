@@ -180,7 +180,7 @@
 
 	\medskip
 
-	Passing objects \eg[7]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c7_eventservice}
+	Passing objects \eg*[7]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c7_eventservice}
 	\begin{itemize}
 		\item send using \ttt{IEventBroker} (from DI)
 			\singleindent{\ttt{send} (sync), \ttt{post} (async)}
@@ -190,12 +190,13 @@
 \end{frame}%>>>
 \begin{frame}{Context vs Event Service}%<<<
 	\begin{itemize}
-		\item \str{persistence} vs \str{notification}
+		\item \str{objects} vs \str{actions}
+		\item \str{persistence} vs \str{differentiation}
 		\item persistence important for inactive parts
 	\end{itemize}
 
 	\begin{centerblock}\begin{tabular}{l@{\ $\Rightarrow$\ }l}
-		I~need to be notified & use \str{Event Service}\\
+		I~need to distinguish actions & use \str{Event Service}\\
 		I~need to retrieve it later & use \str{Context}\\
 		I~need both & use both \eg[7]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c7_eventservice}\\
 	\end{tabular}\end{centerblock}
