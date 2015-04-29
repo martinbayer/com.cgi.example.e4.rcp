@@ -44,7 +44,6 @@
 		\item thick clients with GUI
 		\item layout looks like Eclipse IDE \eg*{https://www.google.cz/search?q=eclipse+rcp&tbm=isch}
 	\end{itemize}
-	%TODO example picture or notice
 \end{frame}%>>>
 \begin{frame}{Dependency Injection}%<<<
 	\begin{itemize}
@@ -161,7 +160,7 @@
 \begin{frame}{Context Hierarchy}%<<<
 	\begin{itemize}
 		\item own context for \str{app model} elements -- \ttt{MContext}\\
-			\singleindent{application, window, perspective, part, popup menu}
+			\singleindent{application $\ni$ window $\ni$ perspective $\ni$ part; popup menu}
 
 		\item DI look-up \fig
 			\begin{enumerate}
