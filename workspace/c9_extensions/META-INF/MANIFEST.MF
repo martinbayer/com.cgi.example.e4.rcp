@@ -14,7 +14,6 @@ Require-Bundle: javax.inject;bundle-version="1.0.0",
  org.eclipse.e4.ui.di;bundle-version="1.0.0",
  org.eclipse.e4.core.contexts;bundle-version="1.3.100",
  c9_extensions_plugin;bundle-version="1.0.0",
- c9_extensions_sendmessage;bundle-version="1.0.0",
  c9_extensions_callsos;bundle-version="1.0.0",
  org.eclipse.e4.core.commands
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

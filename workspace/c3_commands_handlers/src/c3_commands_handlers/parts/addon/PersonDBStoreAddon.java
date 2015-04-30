@@ -17,8 +17,6 @@ public class PersonDBStoreAddon {
 	public void applicationStarted(
 			@EventTopic(UIEvents.UILifeCycle.APP_STARTUP_COMPLETE) Event event,
 			IEclipseContext ctx) {
-		// TODO Modify the UIEvents.UILifeCycle.APP_STARTUP_COMPLETE EventTopic
-		// to a certain event you want to listen to.
 		ctx.set(PersonDBStore.class, PersonDBStore.INSTANCE);
 	}
 

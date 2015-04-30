@@ -40,6 +40,8 @@ import c8_selectionservice.parts.model.Person;
 
 public class SamplePart {
 
+	dat nejake objekty do table viewer uz na zacatku, nebudeme to ukazovat a napsat k tomu podrobnejsi readme file
+	
 	private Text txtInput;
 	private TableViewer tableViewer;
 

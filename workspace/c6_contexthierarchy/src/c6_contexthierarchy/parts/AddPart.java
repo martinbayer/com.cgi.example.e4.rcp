@@ -38,6 +38,8 @@ import c6_contexthierarchy.parts.logic.EditFieldDirtyListener;
 import c6_contexthierarchy.parts.model.Person;
 
 public class AddPart {
+	
+	podivat se jestli se nezbavit perspektivy. Rozdil mezi injektnutim IEclipseContext = je to local context (pridat tlacitko...add to local context nebo neco takoveho)
 
 	private Label firstNameLabel, lastNameLabel, emailLabel;
 	private Text firstNameInput, lastNameInput, emailInput;

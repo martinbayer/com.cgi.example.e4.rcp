@@ -23,6 +23,8 @@ import c11_addons_storage.model.Person;
 import c11_addons_storage_DB.PersonDBStorage;
 
 public class AddPersonPart {
+	prepsat popisky u radio buttonu
+	poradne popsat
 	private Label firstNameLabel, lastNameLabel, emailLabel, ageLabel;
 	private Text firstNameInput, lastNameInput, emailInput, ageInput;
 	private Text status;

@@ -15,7 +15,8 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 public class TxtViewPart {
-
+	to asi nema smysl...zkontrolovat
+	na zacatku ukazat, ze view se chova jinak pro kazdou partu a ukazat k tomu applikacni model. kazdy handler ma jiny kod
 	private Label textContentLabel;
 	private Text textContentInput;
 

@@ -32,6 +32,11 @@ import c7_eventservice.parts.logic.PersonEventConstants;
 import c7_eventservice.parts.model.Person;
 
 public class AddPersonPart {
+	// radsi pouzit sysout misto logovani - je to hezcejsiii
+	dat do pryc jedno policko a pridat topicy namechanged a emailchanged a ve druhe parte nebo ve status baru bude informace o tom co se zmenilo (email/name)
+	v dalsi part bude informace o persone a ukazat na tom, ze kdyz neni part iniciovana "neslysi" eventy
+	zrusit sync/async, protoze to kazdy vi
+
 	@Inject
 	private Logger logger;
 

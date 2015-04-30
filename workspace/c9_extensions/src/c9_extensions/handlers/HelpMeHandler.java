@@ -21,6 +21,7 @@ import org.eclipse.e4.core.di.annotations.Execute;
 import c9_extensions_plugin.IHelpProvider;
 
 public class HelpMeHandler {
+	nejdrive vysvetlit v pluginu extension point + potom pluginy s implementaci a 'pripojeni' na extension point
 	private static final String HELPER_EXT_POINT_ID = "helper.id";
 
 	@Execute
