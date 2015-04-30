@@ -6,11 +6,12 @@
 
 \title{Modularity with Eclipse RCP}
 \author{Martin Bayer \& Tom\'{a}\v{s} Vejpustek}
+\date{May\,13, 2015}
 
 \makeatletter%<<<
 \newcommand{\@eg}{\raisebox{-0.5mm}{\HandRight}}
-\newcommand{\ice@eg}[1]{\textcolor{ice}{\href{#1}{\@eg}}}
-\newcommand{\pmp@eg}[1]{\textcolor{pumpkin}{\href{#1}{\@eg}}}
+\newcommand{\ice@eg}[2][]{\textcolor{ice}{\href{#2}{\@eg\,#1}}}
+\newcommand{\pmp@eg}[2][]{\textcolor{pumpkin}{\href{#2}{\@eg\,#1}}}
 \def\eg{\@ifstar\ice@eg\pmp@eg}
 \newcommand{\fig}{\textcolor{pumpkin}{\raisebox{-0.5mm}{\PencilRightDown}}}
 \newcommand{\str}[1]{\structure{#1}}
@@ -42,9 +43,8 @@
 		\item \alert{not} plugins for Eclipse IDE
 		\item software framework
 		\item thick clients with GUI
-		\item layout looks like Eclipse IDE \eg{https://github.com/martinbayer/com.cgi.example.e4.rcp}
+		\item layout looks like Eclipse IDE \eg*{https://www.google.cz/search?q=eclipse+rcp&tbm=isch}
 	\end{itemize}
-	%TODO example picture or notice
 \end{frame}%>>>
 \begin{frame}{Dependency Injection}%<<<
 	\begin{itemize}
@@ -61,7 +61,7 @@
 \begin{frame}{Dependency Injection in RCP}%<<<
 	\begin{itemize}
 		\item based on \str{OSGi}
-		\item annotations \eg{https://github.com/martinbayer/com.cgi.example.e4.rcp}
+		\item annotations \eg[1]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c1_dependinject}
 			\begin{itemize}
 				\item fields, constructors -- \ttt{@Inject}
 				\item methods -- behavioral (\ttt{@PostConstruct}, \ldots)
@@ -101,13 +101,13 @@
 		\item basis of RCP framework
 		\item Java classes assigned to elements
 		\item behaviour ruled by annotations
-		\item elements \eg{https://github.com/martinbayer/com.cgi.example.e4.rcp}
+		\item elements \eg[2]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c2_applicationmodel}
 			\begin{itemize}
 				\item graphical: window, perspective, part
 				\item commands, handlers, menus, tool items
 				\item addons (provide services)
 			\end{itemize}
-		\item can be changed dynamically (\ttt{EModelService}) \eg*{4}
+		\item can be changed dynamically (\ttt{EModelService}) \eg*[4]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c4_dynamicmodel}
 	\end{itemize}
 \end{frame}%>>>
 \begin{frame}{Commands and Handlers}%<<<
@@ -119,13 +119,13 @@
 	\bigskip
 
 	\begin{itemize}
-		\item DI in practice \fig \eg{https://github.com/martinbayer/com.cgi.example.e4.rcp}
+		\item DI in practice \fig \eg[3]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c3_commands_handlers}
 			\begin{enumerate}
 				\item button calls \str{command}
 				\item \str{framework} finds closest \str{handler}
 			\end{enumerate}
 		\item different ``save'' for different editors
-		\item handlers can be called from code \eg*{3}
+		\item handlers can be called from code \eg*[3]{https://github.com/martinbayer/com.cgi.example.e4.rcp/blob/master/workspace/c3_commands_handlers/src/c3_commands_handlers/parts/EclipseViewPart.java\#L139}
 	\end{itemize}
 \end{frame}%>>>
 
@@ -152,16 +152,16 @@
 		used as & $\mtt{Class\langle T\rangle}\to\mtt{T}$\\
 		implemented as & $\mtt{String} \to \mtt{Object}$ (\ttt{@Named})\\
 	\end{tabular}\end{centerblock}
-	Passing objects \eg{https://github.com/martinbayer/com.cgi.example.e4.rcp}
+	Passing objects \eg[5]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c5_context}
 	\begin{itemize}
 		\item send using \ttt{IEclipseContext} (from DI)
-		\item receive via DI
+		\item receive via DI (can listen)
 	\end{itemize}
 \end{frame}%>>>
 \begin{frame}{Context Hierarchy}%<<<
 	\begin{itemize}
 		\item own context for \str{app model} elements -- \ttt{MContext}\\
-			\singleindent{application, window, perspective, part, popup menu}
+			\singleindent{application $\ni$ window $\ni$ perspective $\ni$ part; popup menu}
 
 		\item DI look-up \fig
 			\begin{enumerate}
@@ -170,7 +170,7 @@
 				\item not found in application context $\Rightarrow$ \texttt{null}/error
 			\end{enumerate}
 
-		\item \alert{Use common context for communication!} \eg{https://github.com/martinbayer/com.cgi.example.e4.rcp}
+		\item \alert{Use common context for communication!} \eg[6]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c6_contexthierarchy}
 	\end{itemize}
 \end{frame}%>>>
 \begin{frame}{Event Service}%<<<
@@ -181,7 +181,7 @@
 
 	\medskip
 
-	Passing objects \eg{https://github.com/martinbayer/com.cgi.example.e4.rcp}
+	Passing objects \eg*[7]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c7_eventservice}
 	\begin{itemize}
 		\item send using \ttt{IEventBroker} (from DI)
 			\singleindent{\ttt{send} (sync), \ttt{post} (async)}
@@ -191,14 +191,15 @@
 \end{frame}%>>>
 \begin{frame}{Context vs Event Service}%<<<
 	\begin{itemize}
-		\item \str{persistence} vs \str{notification}
+		\item \str{objects} vs \str{actions}
+		\item \str{persistence} vs \str{differentiation}
 		\item persistence important for inactive parts
 	\end{itemize}
 
 	\begin{centerblock}\begin{tabular}{l@{\ $\Rightarrow$\ }l}
-		I~need to be notified & use \str{Event Service}\\
+		I~need to distinguish actions & use \str{Event Service}\\
 		I~need to retrieve it later & use \str{Context}\\
-		I~need both & use both \eg{https://github.com/martinbayer/com.cgi.example.e4.rcp}\\
+		I~need both & use both \eg[7]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c7_eventservice}\\
 	\end{tabular}\end{centerblock}
 
 	\begin{itemize}
@@ -212,7 +213,7 @@
 		\item active GUI selection
 		\item window- and part- specific
 	\end{itemize}
-	Passing objects \eg{https://github.com/martinbayer/com.cgi.example.e4.rcp}
+	Passing objects \eg*[8]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c8_selectionservice}
 	\begin{itemize}
 		\item send using \ttt{ESelectionService.setSelection}
 		\item receive via DI: \ttt{@Named(IServiceConstants.ACTIVE\_SELECTION)}
@@ -245,7 +246,7 @@
 			\end{itemize}
 		\item register contributing extensions (\ttt{plugin.xml})
 		\item process contributions (\ttt{IExtensionRegistry} via DI)
-	\end{enumerate}\eg{https://github.com/martinbayer/com.cgi.example.e4.rcp}
+	\end{enumerate}\eg[9]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c9_extensions}
 \end{frame}%>>>
 \begin{frame}{Executable Extensions}%<<<
 	\begin{itemize}
@@ -259,7 +260,7 @@
 \begin{frame}{Fragments}%<<<
 	\begin{itemize}
 		\item adds to \str{application model}
-		\item GUI elements, commands, handlers, \ldots \eg{10}
+		\item GUI elements, commands, handlers, \ldots \eg[10]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c10_fragments}
 		\item extension (\ttt{org.eclipse.e4.workbench.model})
 		\item GUI decomposition -- plugins for perspectives, parts, \ldots
 	\end{itemize}
@@ -268,7 +269,7 @@
 	\begin{itemize}
 		\item model fragments $\Rightarrow$ use DI
 		\item behavioral annotations
-		\item typically \eg{11}
+		\item typically \eg*[11]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c11_addons}
 			\begin{enumerate}
 				\item provide context objects (services)
 				\item listen to messages
@@ -309,7 +310,7 @@
 				\item opens \ttt{PreferenceDialog} on given page
 			\end{enumerate}
 	\end{itemize}
-	\eg*{12}
+	\eg*[12]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c12_preference}
 \end{frame}%>>>
 
 \breakframe

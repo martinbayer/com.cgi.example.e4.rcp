@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: C12 Preference Supage
+Bundle-SymbolicName: c12_preference_subpage;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: c12_preference_core;bundle-version="1.0.0",
+ org.eclipse.swt;bundle-version="3.103.2",
+ org.eclipse.jface;bundle-version="3.10.2"

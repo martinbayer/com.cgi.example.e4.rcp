@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_Fqyt0O2LEeSbp4kqQoWykw" elementId="c12_preference_core.application">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_LZdg0O2LEeSbp4kqQoWykw" elementId="c12_preference_core.trimmedwindow" label="C12 Preference" x="100" y="100" width="800" height="600">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_l7DuMO2hEeSvZaYA2Ehgmw" elementId="c12_preference_core.perspectivestack">
+      <children xsi:type="advanced:Perspective" xmi:id="_m1CqMO2hEeSvZaYA2Ehgmw" elementId="c12_preference_core.perspective">
+        <children xsi:type="basic:PartStack" xmi:id="_oVvA4O2hEeSvZaYA2Ehgmw" elementId="c12_preference_core.partstack"/>
+      </children>
+    </children>
+    <mainMenu xmi:id="_eKXzYO2REeSvZaYA2Ehgmw" elementId="org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_gbCOcO2REeSvZaYA2Ehgmw" elementId="org.eclipse.ui.file.menu" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_BxVEwO2SEeSvZaYA2Ehgmw" elementId="c12_preference_core.handledmenuitem.preference" label="Preferences" command="_zJ0o0O2REeSvZaYA2Ehgmw"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_E8EicO2SEeSvZaYA2Ehgmw" elementId="c12_preference_core.menuseparator"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_Ggx2cO2SEeSvZaYA2Ehgmw" elementId="c12_preference_core.handledmenuitem.exit" label="Exit" command="_jZxQcO2REeSvZaYA2Ehgmw"/>
+      </children>
+    </mainMenu>
+  </children>
+  <handlers xmi:id="_bXwFUO2SEeSvZaYA2Ehgmw" elementId="c12_preference_core.handler.exit" contributionURI="bundleclass://c12_preference_core/com.cgi.example.e4.rcp.c12_preference_core.ExitHandler" command="_jZxQcO2REeSvZaYA2Ehgmw"/>
+  <handlers xmi:id="_a7d4UO2aEeSvZaYA2Ehgmw" elementId="c12_preference_core.handler.preference" contributionURI="bundleclass://c12_preference_core/com.cgi.example.e4.rcp.c12_preference_core.PreferenceHandler" command="_zJ0o0O2REeSvZaYA2Ehgmw"/>
+  <commands xmi:id="_jZxQcO2REeSvZaYA2Ehgmw" elementId="org.eclipse.ui.file.exit" commandName="Exit"/>
+  <commands xmi:id="_zJ0o0O2REeSvZaYA2Ehgmw" elementId="org.eclipse.ui.window.preferences" commandName="Preferences">
+    <parameters xmi:id="_1G3kUO2REeSvZaYA2Ehgmw" elementId="org.eclipse.ui.window.preferences.pageid" name="Page ID"/>
+  </commands>
+  <addons xmi:id="_Fqyt0e2LEeSbp4kqQoWykw" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_Fqyt0u2LEeSbp4kqQoWykw" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_Fqyt0-2LEeSbp4kqQoWykw" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_Fqyt1O2LEeSbp4kqQoWykw" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_Fqyt1e2LEeSbp4kqQoWykw" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_Fqyt1u2LEeSbp4kqQoWykw" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+  <addons xmi:id="_Fqyt1-2LEeSbp4kqQoWykw" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+</application:Application>
