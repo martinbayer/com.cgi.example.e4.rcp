@@ -23,8 +23,6 @@ import c11_addons_storage.model.Person;
 import c11_addons_storage_DB.PersonDBStorage;
 
 public class AddPersonPart {
-	prepsat popisky u radio buttonu
-	poradne popsat
 	private Label firstNameLabel, lastNameLabel, emailLabel, ageLabel;
 	private Text firstNameInput, lastNameInput, emailInput, ageInput;
 	private Text status;
@@ -114,13 +112,13 @@ public class AddPersonPart {
 
 	private void createRadioBtns(Composite parent) {
 		addPersonBtn = new Button(parent, SWT.RADIO);
-		addPersonBtn.setText("Add person via synch event");
+		addPersonBtn.setText("Add person");
 
 		updatePersonBtn = new Button(parent, SWT.RADIO);
-		updatePersonBtn.setText("Add person via asynch event");
+		updatePersonBtn.setText("Update person");
 
 		deletePersonBtn = new Button(parent, SWT.RADIO);
-		deletePersonBtn.setText("Add person to context");
+		deletePersonBtn.setText("Delete person");
 	}
 
 	public void processPerson() {

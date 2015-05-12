@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmi:id="_ZnCqYOhoEeSJdr40kw8Bsw" elementId="org.eclipse.e4.ide.application" bindingContexts="_ZnCqaehoEeSJdr40kw8Bsw">
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_ZnCqYOhoEeSJdr40kw8Bsw" elementId="org.eclipse.e4.ide.application" bindingContexts="_ZnCqaehoEeSJdr40kw8Bsw">
   <children xsi:type="basic:TrimmedWindow" xmi:id="_ZnCqYehoEeSJdr40kw8Bsw" label="c7_eventservice" width="500" height="400">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_ZnGUwOhoEeSJdr40kw8Bsw">
       <children xsi:type="advanced:Perspective" xmi:id="_ZnGUwehoEeSJdr40kw8Bsw">
@@ -12,6 +12,11 @@
       </children>
     </children>
     <mainMenu xmi:id="_ZnFtsOhoEeSJdr40kw8Bsw" elementId="menu:org.eclipse.ui.main.menu"/>
+    <trimBars xmi:id="_jlas0PhzEeS8aeXroqp05A" elementId="c7_eventservice.trimbar.0" side="Bottom">
+      <children xsi:type="menu:ToolBar" xmi:id="_k07z8PhzEeS8aeXroqp05A" elementId="c7_eventservice.toolbar.0">
+        <children xsi:type="menu:ToolControl" xmi:id="_mVlHUPhzEeS8aeXroqp05A" elementId="c7_eventservice.toolcontrol.0" contributionURI="bundleclass://c7_eventservice/c7_eventservice.parts.AppStatusBar"/>
+      </children>
+    </trimBars>
   </children>
   <bindingTables xmi:id="_ZnCqbuhoEeSJdr40kw8Bsw" bindingContext="_ZnCqaehoEeSJdr40kw8Bsw">
     <bindings xmi:id="_ZnCqb-hoEeSJdr40kw8Bsw" keySequence="M1+Q"/>

@@ -10,18 +10,10 @@ public enum PersonStore {
 	private Set<Person> persons = new HashSet<>();
 
 	public boolean addPerson(Person p) {
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-		}
 		return persons.add(p);
 	}
 
 	public boolean removePerson(Person p) {
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-		}
 		return persons.remove(p);
 	}
 

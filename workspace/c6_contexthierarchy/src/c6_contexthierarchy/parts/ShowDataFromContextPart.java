@@ -17,7 +17,6 @@ import javax.inject.Inject;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.model.application.MApplication;
-import org.eclipse.e4.ui.model.application.ui.advanced.MPerspective;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -36,14 +35,11 @@ import c6_contexthierarchy.parts.model.Person;
 
 public class ShowDataFromContextPart {
 
-	private Label firstNameLabel, lastNameLabel, emailLabel;
-	private Text firstNameInput, lastNameInput, emailInput;
+	private Label nameLabel;
+	private Text nameInput;
 
 	@Inject
 	private MWindow window;
-
-	@Inject
-	private MPerspective perspective;
 
 	@Inject
 	private MPart part;
@@ -58,48 +54,20 @@ public class ShowDataFromContextPart {
 	public void createComposite(Composite parent) {
 		parent.setLayout(new GridLayout(2, false));
 
-		/* first name */
-		firstNameLabel = new Label(parent, SWT.NONE);
-		firstNameLabel.setText("First name:");
+		/* name */
+		nameLabel = new Label(parent, SWT.NONE);
+		nameLabel.setText("Name:");
 		GridData gridData = new GridData();
 		gridData.horizontalAlignment = GridData.BEGINNING;
 		gridData.grabExcessHorizontalSpace = false;
-		firstNameLabel.setLayoutData(gridData);
+		nameLabel.setLayoutData(gridData);
 
-		firstNameInput = new Text(parent, SWT.BORDER);
-		firstNameInput.setEditable(false);
+		nameInput = new Text(parent, SWT.BORDER);
+		nameInput.setEditable(false);
 		gridData = new GridData();
 		gridData.horizontalAlignment = GridData.FILL;
 		gridData.grabExcessHorizontalSpace = true;
-		firstNameInput.setLayoutData(gridData);
-
-		/* last name */
-		lastNameLabel = new Label(parent, SWT.NONE);
-		lastNameLabel.setText("Last name:");
-		gridData = new GridData();
-		gridData.horizontalAlignment = GridData.BEGINNING;
-		gridData.grabExcessHorizontalSpace = false;
-		lastNameLabel.setLayoutData(gridData);
-		lastNameInput = new Text(parent, SWT.BORDER);
-		lastNameInput.setEditable(false);
-		gridData = new GridData();
-		gridData.horizontalAlignment = GridData.FILL;
-		gridData.grabExcessHorizontalSpace = true;
-		lastNameInput.setLayoutData(gridData);
-
-		/* email name */
-		emailLabel = new Label(parent, SWT.NONE);
-		emailLabel.setText("Email:");
-		gridData = new GridData();
-		gridData.horizontalAlignment = GridData.BEGINNING;
-		gridData.grabExcessHorizontalSpace = false;
-		emailLabel.setLayoutData(gridData);
-		emailInput = new Text(parent, SWT.BORDER);
-		emailInput.setEditable(false);
-		gridData = new GridData();
-		gridData.horizontalAlignment = GridData.FILL;
-		gridData.grabExcessHorizontalSpace = true;
-		emailInput.setLayoutData(gridData);
+		nameInput.setLayoutData(gridData);
 
 		Button loadDataFromWorkbenchBtn = new Button(parent, SWT.NONE);
 		loadDataFromWorkbenchBtn.setText("Load data from workbench");
@@ -121,16 +89,6 @@ public class ShowDataFromContextPart {
 		gridData.grabExcessHorizontalSpace = true;
 		loadDataFromWindowBtn.setLayoutData(gridData);
 
-		Button loadDataFromPerspectiveBtn = new Button(parent, SWT.NONE);
-		loadDataFromPerspectiveBtn.setText("Load data from perspective");
-		loadDataFromPerspectiveBtn.addSelectionListener(new DisplayPerson(this,
-				ContextSource.PERSPECTIVE));
-		gridData = new GridData();
-		gridData.horizontalSpan = 2;
-		gridData.horizontalAlignment = GridData.FILL;
-		gridData.grabExcessHorizontalSpace = true;
-		loadDataFromPerspectiveBtn.setLayoutData(gridData);
-
 		Button loadDataFromPartBtn = new Button(parent, SWT.NONE);
 		loadDataFromPartBtn.setText("Load data from part");
 		loadDataFromPartBtn.addSelectionListener(new DisplayPerson(this,
@@ -144,7 +102,7 @@ public class ShowDataFromContextPart {
 
 	@Focus
 	public void setFocus() {
-		firstNameInput.setFocus();
+		nameInput.setFocus();
 	}
 
 	public void refreshData(ContextSource contextSource) {
@@ -153,9 +111,6 @@ public class ShowDataFromContextPart {
 		switch (contextSource) {
 		case PART:
 			ctx = part.getContext();
-			break;
-		case PERSPECTIVE:
-			ctx = perspective.getContext();
 			break;
 		case WINDOW:
 			ctx = window.getContext();
@@ -175,9 +130,7 @@ public class ShowDataFromContextPart {
 					"No person for current perspective found");
 			return;
 		}
-		firstNameInput.setText(p.getFirstName());
-		lastNameInput.setText(p.getLastName());
-		emailInput.setText(p.getEmail());
+		nameInput.setText(p.getName());
 	}
 
 	class DisplayPerson extends SelectionAdapter {

@@ -28,8 +28,8 @@ public class DependencyInjection {
 
 	@PostConstruct
 	public void createComposite(Composite parent/*
-												 * I can add any available
-												 * object here
+												 * any available object can be
+												 * added here
 												 */) {
 		parent.setLayout(new GridLayout(2, false));
 		authorLabel = new Label(parent, SWT.NONE);
@@ -37,7 +37,6 @@ public class DependencyInjection {
 		authorInput = new Text(parent, SWT.BORDER);
 		authorInput.setMessage("Enter text to mark part as dirty");
 		authorInput.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-
 	}
 
 	@Focus

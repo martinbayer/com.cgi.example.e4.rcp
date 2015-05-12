@@ -11,10 +11,6 @@
                name="applicationCSS"
                value="platform:/plugin/c3_commands_handlers/css/default.css">
          </property>
-         <property
-               name="lifeCycleURI"
-               value="bundleclass://c3_commands_handlers/c3_commands_handlers.LifeCycleManager">
-         </property>
       </product>
    </extension>
 

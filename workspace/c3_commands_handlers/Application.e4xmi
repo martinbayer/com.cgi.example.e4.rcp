@@ -10,7 +10,6 @@
           <children xsi:type="basic:Part" xmi:id="_0I9twOdTEeS_hNc8afLGTQ" elementId="c3_commands_handlers.part.eclipseViewer" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.parts.EclipseViewPart" label="Eclipse viewer">
             <handlers xmi:id="_tWfcsOgJEeS_hNc8afLGTQ" elementId="c3_commands_handlers.handler.1" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.parts.logic.EclipseViewPartViewHandler" command="_2SG7sOc_EeS_hNc8afLGTQ"/>
           </children>
-          <children xsi:type="basic:Part" xmi:id="_Oh1e8OdUEeS_hNc8afLGTQ" elementId="c3_commands_handlers.part.txtViewer" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.parts.TxtViewPart" label="Txt viewer"/>
         </children>
       </children>
     </children>
@@ -32,7 +31,6 @@
     </trimBars>
   </children>
   <handlers xmi:id="_2SG7rec_EeS_hNc8afLGTQ" elementId="c3_commands_handlers.handler.quitCommand" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.handlers.QuitHandler" command="_2SG7rOc_EeS_hNc8afLGTQ"/>
-  <handlers xmi:id="_2SG7sec_EeS_hNc8afLGTQ" elementId="c3_commands_handlers.handler.openCommand" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.handlers.OpenHandler" command="_2SG7sOc_EeS_hNc8afLGTQ"/>
   <handlers xmi:id="_2SG7tOc_EeS_hNc8afLGTQ" elementId="c3_commands_handlers.handler.saveCommand" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.handlers.SaveHandler" command="_2SG7s-c_EeS_hNc8afLGTQ"/>
   <handlers xmi:id="_2SG7t-c_EeS_hNc8afLGTQ" elementId="c3_commands_handlers.handler.aboutCommand" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.handlers.AboutHandler" command="_2SG7tuc_EeS_hNc8afLGTQ"/>
   <bindingTables xmi:id="_2SG7ruc_EeS_hNc8afLGTQ" bindingContext="_2SG7qec_EeS_hNc8afLGTQ">
@@ -56,5 +54,4 @@
   <addons xmi:id="_2SG7puc_EeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_2SG7p-c_EeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
   <addons xmi:id="_2SG7qOc_EeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
-  <addons xmi:id="_5whRQOgFEeS_hNc8afLGTQ" elementId="c3_commands_handlers.addon.persondbstore" contributionURI="bundleclass://c3_commands_handlers/c3_commands_handlers.parts.addon.PersonDBStoreAddon"/>
 </application:Application>

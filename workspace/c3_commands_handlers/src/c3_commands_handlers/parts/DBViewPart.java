@@ -8,7 +8,6 @@ import javax.inject.Inject;
 import org.eclipse.e4.core.commands.ECommandService;
 import org.eclipse.e4.core.commands.EHandlerService;
 import org.eclipse.e4.core.contexts.IEclipseContext;
-import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.di.Persist;
 import org.eclipse.e4.ui.model.application.ui.MDirtyable;
@@ -25,7 +24,6 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
 import c3_commands_handlers.parts.logic.EditFieldDirtyListener;
-import c3_commands_handlers.parts.logic.PersonDBStore;
 import c3_commands_handlers.parts.model.Person;
 
 public class DBViewPart {
@@ -105,18 +103,14 @@ public class DBViewPart {
 	}
 
 	@Persist
-	public void save(Shell shell, IEclipseContext context,
-			@Optional PersonDBStore personStore) {
+	public void save(Shell shell, IEclipseContext context) {
 		Person p = new Person();
 		p.setFirstName(firstNameInput.getText());
 		p.setLastName(lastNameInput.getText());
 		p.setEmail(emailInput.getText());
-		if (personStore == null) {
-			MessageDialog.openInformation(shell, "Unable to store object",
-					"Unable to store person " + p);
-		} else {
-			personStore.storeToDb(p);
-		}
+		MessageDialog.openInformation(shell, "Person stored",
+				"Person could be stored here");
+
 		dirty.setDirty(false);
 	}
 }

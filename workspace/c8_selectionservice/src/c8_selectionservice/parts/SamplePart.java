@@ -39,9 +39,6 @@ import org.eclipse.swt.widgets.Text;
 import c8_selectionservice.parts.model.Person;
 
 public class SamplePart {
-
-	dat nejake objekty do table viewer uz na zacatku, nebudeme to ukazovat a napsat k tomu podrobnejsi readme file
-	
 	private Text txtInput;
 	private TableViewer tableViewer;
 
@@ -87,6 +84,14 @@ public class SamplePart {
 								.getFirstElement());
 					}
 				});
+		initData(tableViewer);
+	}
+
+	private void initData(TableViewer tableViewer) {
+		tableViewer.add(new Person("John"));
+		tableViewer.add(new Person("Paul"));
+		tableViewer.add(new Person("George"));
+		tableViewer.add(new Person("Ringo"));
 	}
 
 	@Focus
