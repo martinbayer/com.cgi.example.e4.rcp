@@ -7,12 +7,9 @@ import javax.inject.Inject;
 
 import org.eclipse.e4.core.commands.ECommandService;
 import org.eclipse.e4.core.commands.EHandlerService;
-import org.eclipse.e4.core.contexts.IEclipseContext;
-import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.di.Persist;
 import org.eclipse.e4.ui.model.application.ui.MDirtyable;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -25,13 +22,11 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
 import c3_commands_handlers.parts.logic.EditFieldDirtyListener;
-import c3_commands_handlers.parts.logic.PersonDBStore;
-import c3_commands_handlers.parts.model.Person;
 
 public class DBViewPart {
 
-	private Label firstNameLabel, lastNameLabel, emailLabel;
-	private Text firstNameInput, lastNameInput, emailInput;
+	private Label nameLabel;
+	private Text nameInput;
 
 	@Inject
 	private EHandlerService handlerService;
@@ -45,48 +40,20 @@ public class DBViewPart {
 	public void createComposite(Composite parent) {
 		parent.setLayout(new GridLayout(2, false));
 
-		/* first name */
-		firstNameLabel = new Label(parent, SWT.NONE);
-		firstNameLabel.setText("First name:");
+		/* name */
+		nameLabel = new Label(parent, SWT.NONE);
+		nameLabel.setText("First name:");
 		GridData gridData = new GridData();
 		gridData.horizontalAlignment = GridData.BEGINNING;
 		gridData.grabExcessHorizontalSpace = false;
-		firstNameLabel.setLayoutData(gridData);
+		nameLabel.setLayoutData(gridData);
 
-		firstNameInput = new Text(parent, SWT.BORDER);
-		firstNameInput.addModifyListener(new EditFieldDirtyListener(dirty));
+		nameInput = new Text(parent, SWT.BORDER);
+		nameInput.addModifyListener(new EditFieldDirtyListener(dirty));
 		gridData = new GridData();
 		gridData.horizontalAlignment = GridData.FILL;
 		gridData.grabExcessHorizontalSpace = true;
-		firstNameInput.setLayoutData(gridData);
-
-		/* last name */
-		lastNameLabel = new Label(parent, SWT.NONE);
-		lastNameLabel.setText("Last name:");
-		gridData = new GridData();
-		gridData.horizontalAlignment = GridData.BEGINNING;
-		gridData.grabExcessHorizontalSpace = false;
-		lastNameLabel.setLayoutData(gridData);
-		lastNameInput = new Text(parent, SWT.BORDER);
-		lastNameInput.addModifyListener(new EditFieldDirtyListener(dirty));
-		gridData = new GridData();
-		gridData.horizontalAlignment = GridData.FILL;
-		gridData.grabExcessHorizontalSpace = true;
-		lastNameInput.setLayoutData(gridData);
-
-		/* email name */
-		emailLabel = new Label(parent, SWT.NONE);
-		emailLabel.setText("Email:");
-		gridData = new GridData();
-		gridData.horizontalAlignment = GridData.BEGINNING;
-		gridData.grabExcessHorizontalSpace = false;
-		emailLabel.setLayoutData(gridData);
-		emailInput = new Text(parent, SWT.BORDER);
-		emailInput.addModifyListener(new EditFieldDirtyListener(dirty));
-		gridData = new GridData();
-		gridData.horizontalAlignment = GridData.FILL;
-		gridData.grabExcessHorizontalSpace = true;
-		emailInput.setLayoutData(gridData);
+		nameInput.setLayoutData(gridData);
 
 		Button openBtn = new Button(parent, SWT.NONE);
 		openBtn.setText("Show persons");
@@ -101,22 +68,12 @@ public class DBViewPart {
 
 	@Focus
 	public void setFocus() {
-		firstNameInput.setFocus();
+		nameInput.setFocus();
 	}
 
 	@Persist
-	public void save(Shell shell, IEclipseContext context,
-			@Optional PersonDBStore personStore) {
-		Person p = new Person();
-		p.setFirstName(firstNameInput.getText());
-		p.setLastName(lastNameInput.getText());
-		p.setEmail(emailInput.getText());
-		if (personStore == null) {
-			MessageDialog.openInformation(shell, "Unable to store object",
-					"Unable to store person " + p);
-		} else {
-			personStore.storeToDb(p);
-		}
+	public void save(Shell shell) {
+		System.out.println("person is stored to DB");
 		dirty.setDirty(false);
 	}
 }
@@ -126,8 +83,7 @@ class ShowDBRecords extends SelectionAdapter {
 	private EHandlerService handlerService;
 	private ECommandService commandService;
 
-	public ShowDBRecords(EHandlerService handlerService,
-			ECommandService commandService) {
+	ShowDBRecords(EHandlerService handlerService, ECommandService commandService) {
 		this.handlerService = handlerService;
 		this.commandService = commandService;
 	}

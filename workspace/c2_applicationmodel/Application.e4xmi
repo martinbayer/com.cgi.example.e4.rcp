@@ -9,8 +9,8 @@
             <children xsi:type="basic:Part" xmi:id="_mE1qgOc5EeS_hNc8afLGTQ" elementId="c2_applicationmodel.part.javaEditor" label="Java editor"/>
           </children>
           <children xsi:type="basic:PartStack" xmi:id="_lZZUEOcpEeS_hNc8afLGTQ" elementId="galleries">
-            <children xsi:type="basic:Part" xmi:id="_aOKqYOcsEeS_hNc8afLGTQ" elementId="c2_applicationmodel.part.pngImages" label="PNG images"/>
             <children xsi:type="basic:Part" xmi:id="_7-stAOcpEeS_hNc8afLGTQ" elementId="c2_applicationmodel.part.jpgImages" label="JPG images"/>
+            <children xsi:type="basic:Part" xmi:id="_aOKqYOcsEeS_hNc8afLGTQ" elementId="c2_applicationmodel.part.pngImages" label="PNG images"/>
           </children>
         </children>
       </children>

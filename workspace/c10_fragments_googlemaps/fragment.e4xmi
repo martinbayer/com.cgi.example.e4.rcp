@@ -7,6 +7,6 @@
     <elements xsi:type="commands:Command" xmi:id="_i_WG8OmvEeSom7EThXrK9A" elementId="c10_fragments_googlemaps.command.openGoogleMap" commandName="Open Google map"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Tz2CkOmuEeSom7EThXrK9A" featurename="children" parentElementId="c10_fragments.menu.maps">
-    <elements xsi:type="menu:HandledMenuItem" xmi:id="_bYNy8OmuEeSom7EThXrK9A" elementId="c10_fragments_googlemaps.handledmenuitem.crrrroror" label="Display google maps" command="_i_WG8OmvEeSom7EThXrK9A"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_bYNy8OmuEeSom7EThXrK9A" elementId="c10_fragments_googlemaps.handledmenuitem.displayGooglemaps" label="Display google maps" command="_i_WG8OmvEeSom7EThXrK9A"/>
   </fragments>
 </fragment:ModelFragments>

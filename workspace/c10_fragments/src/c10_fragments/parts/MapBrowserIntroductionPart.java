@@ -21,7 +21,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 
 public class MapBrowserIntroductionPart {
- na konci odstranit jeden fragment z feature at jde videt, ze se to ztrati z menu atd...
 	private Label introductionLabel;
 
 	@PostConstruct

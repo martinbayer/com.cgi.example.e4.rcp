@@ -15,9 +15,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.eclipse.e4.core.services.events.IEventBroker;
-import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.e4.ui.di.Focus;
-import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -32,21 +30,12 @@ import c7_eventservice.parts.logic.PersonEventConstants;
 import c7_eventservice.parts.model.Person;
 
 public class AddPersonPart {
-	// radsi pouzit sysout misto logovani - je to hezcejsiii
-	dat do pryc jedno policko a pridat topicy namechanged a emailchanged a ve druhe parte nebo ve status baru bude informace o tom co se zmenilo (email/name)
-	v dalsi part bude informace o persone a ukazat na tom, ze kdyz neni part iniciovana "neslysi" eventy
-	zrusit sync/async, protoze to kazdy vi
 
-	@Inject
-	private Logger logger;
+	private Label nameLabel, emailLabel;
+	private Text nameInput, emailInput;
+	private Button addEvtBtn, deleteEvtBtn;
 
-	private Label firstNameLabel, lastNameLabel, emailLabel;
-	private Text firstNameInput, lastNameInput, emailInput;
-	private Button addSyncEvtBtn, addAsyncEvtBtn, addCtxBtn, deleteSyncEvtBtn,
-			deleteAsyncEvtBtn, deleteCtxBtn;
-
-	@Inject
-	private MApplication application;
+	private Button updateNameBtn, updateEmailBtn;
 
 	@Inject
 	private IEventBroker eventBroker;
@@ -55,32 +44,19 @@ public class AddPersonPart {
 	public void createComposite(Composite parent) {
 		parent.setLayout(new GridLayout(2, false));
 
-		/* first name */
-		firstNameLabel = new Label(parent, SWT.NONE);
-		firstNameLabel.setText("First name:");
+		/* name */
+		nameLabel = new Label(parent, SWT.NONE);
+		nameLabel.setText("Name:");
 		GridData gridData = new GridData();
 		gridData.horizontalAlignment = GridData.BEGINNING;
 		gridData.grabExcessHorizontalSpace = false;
-		firstNameLabel.setLayoutData(gridData);
+		nameLabel.setLayoutData(gridData);
 
-		firstNameInput = new Text(parent, SWT.BORDER);
+		nameInput = new Text(parent, SWT.BORDER);
 		gridData = new GridData();
 		gridData.horizontalAlignment = GridData.FILL;
 		gridData.grabExcessHorizontalSpace = true;
-		firstNameInput.setLayoutData(gridData);
-
-		/* last name */
-		lastNameLabel = new Label(parent, SWT.NONE);
-		lastNameLabel.setText("Last name:");
-		gridData = new GridData();
-		gridData.horizontalAlignment = GridData.BEGINNING;
-		gridData.grabExcessHorizontalSpace = false;
-		lastNameLabel.setLayoutData(gridData);
-		lastNameInput = new Text(parent, SWT.BORDER);
-		gridData = new GridData();
-		gridData.horizontalAlignment = GridData.FILL;
-		gridData.grabExcessHorizontalSpace = true;
-		lastNameInput.setLayoutData(gridData);
+		nameInput.setLayoutData(gridData);
 
 		/* email name */
 		emailLabel = new Label(parent, SWT.NONE);
@@ -95,105 +71,124 @@ public class AddPersonPart {
 		gridData.grabExcessHorizontalSpace = true;
 		emailInput.setLayoutData(gridData);
 
-		createCheckBoxes(parent);
+		createButtons(parent);
 
-		Button processPersonBtn = new Button(parent, SWT.NONE);
-		processPersonBtn.setText("Process person");
-		processPersonBtn.addSelectionListener(new ProcessRequest(this));
+		updateNameBtn = new Button(parent, SWT.NONE);
+		updateNameBtn.setText("Update name");
+		updateNameBtn.addSelectionListener(new UpdateName(this));
 		gridData = new GridData();
 		gridData.horizontalAlignment = GridData.FILL;
 		gridData.horizontalSpan = 2;
 		gridData.grabExcessHorizontalSpace = true;
-		processPersonBtn.setLayoutData(gridData);
+		updateNameBtn.setLayoutData(gridData);
+
+		updateEmailBtn = new Button(parent, SWT.NONE);
+		updateEmailBtn.setText("Update email");
+		updateEmailBtn.addSelectionListener(new UpdateEmail(this));
+		gridData = new GridData();
+		gridData.horizontalAlignment = GridData.FILL;
+		gridData.horizontalSpan = 2;
+		gridData.grabExcessHorizontalSpace = true;
+		updateEmailBtn.setLayoutData(gridData);
 	}
 
-	private void createCheckBoxes(Composite parent) {
-		addSyncEvtBtn = new Button(parent, SWT.CHECK);
-		addSyncEvtBtn.setText("Add person via synch event");
+	private void createButtons(Composite parent) {
+		addEvtBtn = new Button(parent, SWT.NONE);
+		addEvtBtn.setText("Add person event");
+		addEvtBtn.addSelectionListener(new AddPerson(this));
 
-		addAsyncEvtBtn = new Button(parent, SWT.CHECK);
-		addAsyncEvtBtn.setText("Add person via asynch event");
-
-		addCtxBtn = new Button(parent, SWT.CHECK);
-		addCtxBtn.setText("Add person to context");
-
-		deleteSyncEvtBtn = new Button(parent, SWT.CHECK);
-		deleteSyncEvtBtn.setText("Delete person via synch event");
-
-		deleteAsyncEvtBtn = new Button(parent, SWT.CHECK);
-		deleteAsyncEvtBtn.setText("Delete person via asynch event");
-
-		deleteCtxBtn = new Button(parent, SWT.CHECK);
-		deleteCtxBtn.setText("Delete person from context");
-
+		deleteEvtBtn = new Button(parent, SWT.NONE);
+		deleteEvtBtn.setText("Delete person event");
+		deleteEvtBtn.addSelectionListener(new DeletePerson(this));
 	}
 
-	public void processPerson() {
-		Person p = createPersonFromForm();
-		boolean adding = false;
-		if (addSyncEvtBtn.getSelection()) {
-			adding = true;
-			logger.info("Sync event invoked");
-			eventBroker.send(PersonEventConstants.TOPIC_PERSON_NEW, p);
-			logger.info("Sync event complete");
-		}
-		if (addAsyncEvtBtn.getSelection()) {
-			adding = true;
-			logger.info("Async event invoked");
-			eventBroker.post(PersonEventConstants.TOPIC_PERSON_NEW, p);
-			logger.info("Async event complete");
-		}
-		if (addCtxBtn.getSelection()) {
-			adding = true;
-			application.getContext().set(Person.class, p);
-			logger.info("Object added to context");
-		}
+	public void addPerson() {
+		System.out.println("Add event invoked");
+		eventBroker.send(PersonEventConstants.TOPIC_PERSON_NEW,
+				createPersonFromForm());
+	}
 
-		if (deleteAsyncEvtBtn.getSelection() || deleteSyncEvtBtn.getSelection()
-				|| deleteCtxBtn.getSelection()) {
-			if (adding) {
-				logger.info("Object cannot be added and deleted at once");
-			} else {
-				if (deleteAsyncEvtBtn.getSelection()) {
-					eventBroker.post(PersonEventConstants.TOPIC_PERSON_DELETE,
-							p);
-				}
-				if (deleteSyncEvtBtn.getSelection()) {
-					eventBroker.send(PersonEventConstants.TOPIC_PERSON_DELETE,
-							p);
-				}
-				if (deleteCtxBtn.getSelection()) {
-					application.getContext().remove(Person.class);
-				}
-			}
-		}
-
+	public void deletePerson() {
+		System.out.println("Delete event invoked");
+		eventBroker.send(PersonEventConstants.TOPIC_PERSON_DELETE,
+				createPersonFromForm());
 	}
 
 	private Person createPersonFromForm() {
 		Person p = new Person();
 		p.setEmail(emailInput.getText());
-		p.setFirstName(firstNameInput.getText());
-		p.setLastName(lastNameInput.getText());
+		p.setName(nameInput.getText());
 		return p;
 	}
 
 	@Focus
 	public void setFocus() {
-		firstNameInput.setFocus();
+		nameInput.setFocus();
 	}
 
-	class ProcessRequest extends SelectionAdapter {
+	class AddPerson extends SelectionAdapter {
 
 		private AddPersonPart part;
 
-		public ProcessRequest(AddPersonPart part) {
+		public AddPerson(AddPersonPart part) {
 			this.part = part;
 		}
 
 		@Override
 		public void widgetSelected(SelectionEvent e) {
-			this.part.processPerson();
+			this.part.addPerson();
 		}
+	}
+
+	class DeletePerson extends SelectionAdapter {
+
+		private AddPersonPart part;
+
+		public DeletePerson(AddPersonPart part) {
+			this.part = part;
+		}
+
+		@Override
+		public void widgetSelected(SelectionEvent e) {
+			this.part.deletePerson();
+		}
+	}
+
+	class UpdateName extends SelectionAdapter {
+
+		private AddPersonPart part;
+
+		public UpdateName(AddPersonPart part) {
+			this.part = part;
+		}
+
+		@Override
+		public void widgetSelected(SelectionEvent e) {
+			this.part.updateName();
+		}
+	}
+
+	class UpdateEmail extends SelectionAdapter {
+
+		private AddPersonPart part;
+
+		public UpdateEmail(AddPersonPart part) {
+			this.part = part;
+		}
+
+		@Override
+		public void widgetSelected(SelectionEvent e) {
+			this.part.updateEmail();
+		}
+	}
+
+	public void updateName() {
+		eventBroker.send(PersonEventConstants.TOPIC_PERSON_NAME_CHANGED,
+				createPersonFromForm());
+	}
+
+	public void updateEmail() {
+		eventBroker.send(PersonEventConstants.TOPIC_PERSON_EMAIL_CHANGED,
+				createPersonFromForm());
 	}
 }

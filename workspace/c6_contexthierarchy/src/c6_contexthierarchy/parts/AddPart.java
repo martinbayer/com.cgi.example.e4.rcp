@@ -1,14 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2010 - 2013 IBM Corporation and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *     IBM Corporation - initial API and implementation
- *     Lars Vogel <lars.Vogel@gmail.com> - Bug 419770
- *******************************************************************************/
 package c6_contexthierarchy.parts;
 
 import javax.annotation.PostConstruct;
@@ -17,6 +6,7 @@ import javax.inject.Inject;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.di.Persist;
 import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.ui.MDirtyable;
 import org.eclipse.e4.ui.model.application.ui.advanced.MPerspective;
@@ -38,11 +28,9 @@ import c6_contexthierarchy.parts.logic.EditFieldDirtyListener;
 import c6_contexthierarchy.parts.model.Person;
 
 public class AddPart {
-	
-	podivat se jestli se nezbavit perspektivy. Rozdil mezi injektnutim IEclipseContext = je to local context (pridat tlacitko...add to local context nebo neco takoveho)
 
-	private Label firstNameLabel, lastNameLabel, emailLabel;
-	private Text firstNameInput, lastNameInput, emailInput;
+	private Label nameLabel;
+	private Text nameInput;
 
 	@Inject
 	private MWindow window;
@@ -67,48 +55,20 @@ public class AddPart {
 	public void createComposite(Composite parent) {
 		parent.setLayout(new GridLayout(2, false));
 
-		/* first name */
-		firstNameLabel = new Label(parent, SWT.NONE);
-		firstNameLabel.setText("First name:");
+		/* name */
+		nameLabel = new Label(parent, SWT.NONE);
+		nameLabel.setText("Name:");
 		GridData gridData = new GridData();
 		gridData.horizontalAlignment = GridData.BEGINNING;
 		gridData.grabExcessHorizontalSpace = false;
-		firstNameLabel.setLayoutData(gridData);
+		nameLabel.setLayoutData(gridData);
 
-		firstNameInput = new Text(parent, SWT.BORDER);
-		firstNameInput.addModifyListener(new EditFieldDirtyListener(dirty));
+		nameInput = new Text(parent, SWT.BORDER);
+		nameInput.addModifyListener(new EditFieldDirtyListener(dirty));
 		gridData = new GridData();
 		gridData.horizontalAlignment = GridData.FILL;
 		gridData.grabExcessHorizontalSpace = true;
-		firstNameInput.setLayoutData(gridData);
-
-		/* last name */
-		lastNameLabel = new Label(parent, SWT.NONE);
-		lastNameLabel.setText("Last name:");
-		gridData = new GridData();
-		gridData.horizontalAlignment = GridData.BEGINNING;
-		gridData.grabExcessHorizontalSpace = false;
-		lastNameLabel.setLayoutData(gridData);
-		lastNameInput = new Text(parent, SWT.BORDER);
-		lastNameInput.addModifyListener(new EditFieldDirtyListener(dirty));
-		gridData = new GridData();
-		gridData.horizontalAlignment = GridData.FILL;
-		gridData.grabExcessHorizontalSpace = true;
-		lastNameInput.setLayoutData(gridData);
-
-		/* email name */
-		emailLabel = new Label(parent, SWT.NONE);
-		emailLabel.setText("Email:");
-		gridData = new GridData();
-		gridData.horizontalAlignment = GridData.BEGINNING;
-		gridData.grabExcessHorizontalSpace = false;
-		emailLabel.setLayoutData(gridData);
-		emailInput = new Text(parent, SWT.BORDER);
-		emailInput.addModifyListener(new EditFieldDirtyListener(dirty));
-		gridData = new GridData();
-		gridData.horizontalAlignment = GridData.FILL;
-		gridData.grabExcessHorizontalSpace = true;
-		emailInput.setLayoutData(gridData);
+		nameInput.setLayoutData(gridData);
 
 		createButtons(parent);
 
@@ -152,24 +112,6 @@ public class AddPart {
 		gridData.grabExcessHorizontalSpace = true;
 		clearWindowCtx.setLayoutData(gridData);
 
-		Button savePersonToPerspectiveBtn = new Button(parent, SWT.NONE);
-		savePersonToPerspectiveBtn.setText("Save data to perspective");
-		savePersonToPerspectiveBtn.addSelectionListener(new SavePerson(this,
-				ContextSource.PERSPECTIVE));
-		gridData = new GridData();
-		gridData.horizontalAlignment = GridData.FILL;
-		gridData.grabExcessHorizontalSpace = true;
-		savePersonToPerspectiveBtn.setLayoutData(gridData);
-
-		Button clearPerspectiveCtx = new Button(parent, SWT.NONE);
-		clearPerspectiveCtx.setText("Clear perspective context");
-		clearPerspectiveCtx.addSelectionListener(new ClearContext(this,
-				ContextSource.PERSPECTIVE));
-		gridData = new GridData();
-		gridData.horizontalAlignment = GridData.FILL;
-		gridData.grabExcessHorizontalSpace = true;
-		clearPerspectiveCtx.setLayoutData(gridData);
-
 		Button savePersonToPartBtn = new Button(parent, SWT.NONE);
 		savePersonToPartBtn.setText("Save data to part");
 		savePersonToPartBtn.addSelectionListener(new SavePerson(this,
@@ -191,7 +133,7 @@ public class AddPart {
 
 	@Focus
 	public void setFocus() {
-		firstNameInput.setFocus();
+		nameInput.setFocus();
 	}
 
 	public void savePerson(ContextSource contextSource) {
@@ -200,9 +142,6 @@ public class AddPart {
 		switch (contextSource) {
 		case PART:
 			ctx = part.getContext();
-			break;
-		case PERSPECTIVE:
-			ctx = perspective.getContext();
 			break;
 		case WINDOW:
 			ctx = window.getContext();
@@ -226,9 +165,6 @@ public class AddPart {
 		case PART:
 			ctx = part.getContext();
 			break;
-		case PERSPECTIVE:
-			ctx = perspective.getContext();
-			break;
 		case WINDOW:
 			ctx = window.getContext();
 			break;
@@ -245,11 +181,14 @@ public class AddPart {
 		dirty.setDirty(false);
 	}
 
+	@Persist
+	public void save() {
+		dirty.setDirty(false);
+	}
+
 	private Person createPersonFromForm() {
 		Person p = new Person();
-		p.setEmail(emailInput.getText());
-		p.setFirstName(firstNameInput.getText());
-		p.setLastName(lastNameInput.getText());
+		p.setName(nameInput.getText());
 		return p;
 	}
 

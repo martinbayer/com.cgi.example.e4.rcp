@@ -18,17 +18,15 @@
     <mainMenu xmi:id="_PM-QOegkEeS_hNc8afLGTQ" elementId="menu:org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_PM-3MOgkEeS_hNc8afLGTQ" label="File">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_PM-3MegkEeS_hNc8afLGTQ" label="Open" iconURI="platform:/plugin/c6_contexthierarchy/icons/sample.png" command="_PM-QMOgkEeS_hNc8afLGTQ"/>
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_quoKIOgrEeS_hNc8afLGTQ" elementId="c6_contexthierarchy.handledmenuitem.switchPerspective" label="Switch perspective" command="_mdUF8OgrEeS_hNc8afLGTQ"/>
       </children>
     </mainMenu>
     <trimBars xmi:id="_PM-3O-gkEeS_hNc8afLGTQ">
       <children xsi:type="menu:ToolBar" xmi:id="_PM-3POgkEeS_hNc8afLGTQ" elementId="toolbar:org.eclipse.ui.main.toolbar">
         <children xsi:type="menu:HandledToolItem" xmi:id="_PM-3PegkEeS_hNc8afLGTQ" iconURI="platform:/plugin/c6_contexthierarchy/icons/sample.png" command="_PM-QMOgkEeS_hNc8afLGTQ"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_uDZtkOgrEeS_hNc8afLGTQ" elementId="c6_contexthierarchy.handledtoolitem.switchPerspective" label="Switch perspective" command="_mdUF8OgrEeS_hNc8afLGTQ"/>
       </children>
     </trimBars>
   </children>
-  <children xsi:type="basic:Window" xmi:id="_0wblcOhbEeSJdr40kw8Bsw" elementId="c6_contexthierarchy.window.secondWindow" label="Second window">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_5EpS0PlVEeS-d_q21lrzZw" elementId="c6_contexthierarchy.trimmedwindow.secondwindow" label="Second window">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_a1E9EOhjEeSJdr40kw8Bsw" elementId="c6_contexthierarchy.perspectivestack.0">
       <children xsi:type="advanced:Perspective" xmi:id="_bhk2sOhjEeSJdr40kw8Bsw" elementId="c6_contexthierarchy.perspective.0">
         <children xsi:type="basic:PartStack" xmi:id="_4lM3kOhbEeSJdr40kw8Bsw" elementId="c6_contexthierarchy.partstack.0">
@@ -37,9 +35,13 @@
         </children>
       </children>
     </children>
+    <trimBars xmi:id="_9icT0PlVEeS-d_q21lrzZw" elementId="c6_contexthierarchy.trimbar.0">
+      <children xsi:type="menu:ToolBar" xmi:id="_-LlXcPlVEeS-d_q21lrzZw" elementId="c6_contexthierarchy.toolbar.0">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_-oumcPlVEeS-d_q21lrzZw" elementId="c6_contexthierarchy.handledtoolitem.save" label="Save" iconURI="platform:/plugin/c6_contexthierarchy/icons/save_edit.png" command="_PM-QMOgkEeS_hNc8afLGTQ"/>
+      </children>
+    </trimBars>
   </children>
-  <handlers xmi:id="_PM-QMegkEeS_hNc8afLGTQ" elementId="c6_contexthierarchy.handler.openCommand" contributionURI="bundleclass://c6_contexthierarchy/c6_contexthierarchy.handlers.OpenHandler" command="_PM-QMOgkEeS_hNc8afLGTQ"/>
-  <handlers xmi:id="_pNSTMOgrEeS_hNc8afLGTQ" elementId="c6_contexthierarchy.handler.0" contributionURI="bundleclass://c6_contexthierarchy/c6_contexthierarchy.handlers.SwitchPerspectiveHandler" command="_mdUF8OgrEeS_hNc8afLGTQ"/>
+  <handlers xmi:id="_PM-QMegkEeS_hNc8afLGTQ" elementId="c6_contexthierarchy.handler.saveCommand" contributionURI="bundleclass://c6_contexthierarchy/c6_contexthierarchy.handlers.SaveHandler" command="_PM-QMOgkEeS_hNc8afLGTQ"/>
   <bindingTables xmi:id="_PM-QLugkEeS_hNc8afLGTQ" bindingContext="_PM-QKegkEeS_hNc8afLGTQ">
     <bindings xmi:id="_PM-QL-gkEeS_hNc8afLGTQ" keySequence="M1+Q"/>
     <bindings xmi:id="_PM-QMugkEeS_hNc8afLGTQ" keySequence="M1+O" command="_PM-QMOgkEeS_hNc8afLGTQ"/>
@@ -50,8 +52,7 @@
     <children xmi:id="_PM-QKugkEeS_hNc8afLGTQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
     <children xmi:id="_PM-QK-gkEeS_hNc8afLGTQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
   </rootContext>
-  <commands xmi:id="_PM-QMOgkEeS_hNc8afLGTQ" elementId="c6_contexthierarchy.open" commandName="openCommand"/>
-  <commands xmi:id="_mdUF8OgrEeS_hNc8afLGTQ" elementId="c6_contexthierarchy.command.switchperspective" commandName="Switch perspective"/>
+  <commands xmi:id="_PM-QMOgkEeS_hNc8afLGTQ" elementId="c6_contexthierarchy.save" commandName="saveCommand"/>
   <addons xmi:id="_PM-QIugkEeS_hNc8afLGTQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_PM-QI-gkEeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_PM-QJOgkEeS_hNc8afLGTQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>

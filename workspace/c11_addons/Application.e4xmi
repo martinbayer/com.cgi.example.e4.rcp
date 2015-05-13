@@ -33,5 +33,5 @@
   <addons xmi:id="_TWOpx-m_EeSom7EThXrK9A" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
   <addons xmi:id="_TWOpyOm_EeSom7EThXrK9A" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
   <addons xmi:id="_3PtU4OnHEeSom7EThXrK9A" elementId="c11_addons.addon.storageinit" contributionURI="bundleclass://c11_addons/c11_addons.addons.InitStorageAddon"/>
-  <addons xmi:id="_HtFr4OpNEeS7Tpasak6A2g" elementId="c11_addons.addon.closeresourcesonshutdown" contributionURI="bundleclass://c11_addons/c11_addons.addons.ReconectPersonStorageAddon"/>
+  <addons xmi:id="_HtFr4OpNEeS7Tpasak6A2g" elementId="c11_addons.addon.closeresourcesonshutdown" contributionURI="bundleclass://c11_addons/c11_addons.addons.ReconnectPersonStorageAddon"/>
 </application:Application>

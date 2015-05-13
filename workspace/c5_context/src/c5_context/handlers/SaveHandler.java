@@ -11,6 +11,9 @@
  *******************************************************************************/
 package c5_context.handlers;
 
+import java.time.LocalDateTime;
+
+import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
@@ -26,7 +29,12 @@ public class SaveHandler {
 	}
 
 	@Execute
-	public void execute(EPartService partService) {
+	public void execute(EPartService partService, IEclipseContext ctx) {
+		String dateTime = ctx.get(LocalDateTime.class) != null ? ctx.get(
+				LocalDateTime.class).toString() : "not saved yet";
+		String message = "Data stored last time on " + dateTime;
+		System.out.println(message);
+		ctx.set(LocalDateTime.class, LocalDateTime.now());
 		partService.saveAll(false);
 	}
 }
