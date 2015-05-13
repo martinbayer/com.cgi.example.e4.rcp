@@ -13,7 +13,7 @@
 \newcommand{\ice@eg}[2][]{\textcolor{ice}{\href{#2}{\@eg\,#1}}}
 \newcommand{\pmp@eg}[2][]{\textcolor{pumpkin}{\href{#2}{\@eg\,#1}}}
 \def\eg{\@ifstar\ice@eg\pmp@eg}
-\newcommand{\fig}{\textcolor{pumpkin}{\raisebox{-0.5mm}{\PencilRightDown}}}
+%\newcommand{\fig}{\textcolor{pumpkin}{\raisebox{-0.5mm}{\PencilRightDown}}}
 \newcommand{\str}[1]{\structure{#1}}
 
 \newcommand{\breakframe}{\begin{fillerframe}\frametitle{Break: Questions?}\end{fillerframe}}
@@ -32,7 +32,7 @@
 	Basic understanding of RCP:
 	\begin{enumerate}
 		\item What is Eclipse RCP?
-		\item Dependency injection, inversion of control
+		\item \str{Dependency injection}, \str{inversion of control}
 		\item Application architecture
 		\item Communication
 		\item Modularity with plugins
@@ -40,15 +40,15 @@
 \end{frame}%>>>
 \begin{frame}{Eclipse Rich Client Platform}%<<<
 	\begin{itemize}
-		\item \alert{not} plugins for Eclipse IDE
 		\item software framework
 		\item thick clients with GUI
+		\item \alert{not} plugins for Eclipse IDE
 		\item layout looks like Eclipse IDE \eg*{https://www.google.cz/search?q=eclipse+rcp&tbm=isch}
 	\end{itemize}
 \end{frame}%>>>
 \begin{frame}{Dependency Injection}%<<<
 	\begin{itemize}
-		\item[=] means of accessing software libraries \fig
+		\item[=] means of accessing software libraries %\fig
 			\begin{enumerate}
 				\item I~need \str{service}
 				\item I~ask \str{framework} for \str{interface}
@@ -79,7 +79,6 @@
 \begin{frame}{Pros and Cons of Dependency Injection}%<<<
 	\begin{itemize}
 		\item[+] \str{independence on concrete implementation}
-		\item[+] increased modularity
 		\item[+] easy testing
 		\item[+] independent development (only need API)
 		\item[+] reduces boilerplate dependency obtaining
@@ -119,7 +118,7 @@
 	\bigskip
 
 	\begin{itemize}
-		\item DI in practice \fig \eg[3]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c3_commands_handlers}
+		\item IoC in practice \eg[3]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c3_commands_handlers} %\fig
 			\begin{enumerate}
 				\item button calls \str{command}
 				\item \str{framework} finds closest \str{handler}
@@ -148,22 +147,22 @@
 		\item basis of DI in RCP
 		\item storage of objects
 	\end{itemize}
-	\begin{centerblock}\begin{tabular}{rl}
-		used as & $\mtt{Class\langle T\rangle}\to\mtt{T}$\\
-		implemented as & $\mtt{String} \to \mtt{Object}$ (\ttt{@Named})\\
-	\end{tabular}\end{centerblock}
 	Passing objects \eg[5]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c5_context}
 	\begin{itemize}
 		\item send using \ttt{IEclipseContext} (from DI)
 		\item receive via DI (can listen)
 	\end{itemize}
+	\begin{centerblock}\begin{tabular}{rl}
+		used as & $\mtt{Class\langle T\rangle}\to\mtt{T}$\\
+		implemented as & $\mtt{String} \to \mtt{Object}$ (\ttt{@Named})\\
+	\end{tabular}\end{centerblock}
 \end{frame}%>>>
 \begin{frame}{Context Hierarchy}%<<<
 	\begin{itemize}
 		\item own context for \str{app model} elements -- \ttt{MContext}\\
 			\singleindent{application $\ni$ window $\ni$ perspective $\ni$ part; popup menu}
 
-		\item DI look-up \fig
+		\item DI look-up %\fig
 			\begin{enumerate}
 				\item search current context
 				\item not found $\Rightarrow$ search parent context; \alert{repeat}
@@ -173,7 +172,7 @@
 		\item \alert{Use common context for communication!} \eg[6]{https://github.com/martinbayer/com.cgi.example.e4.rcp/tree/master/workspace/c6_contexthierarchy}
 	\end{itemize}
 \end{frame}%>>>
-\begin{frame}{Event Service}%<<<
+\begin{frame}{Event Service*}%<<<
 	\begin{itemize}
 		\item global messages (context-independent)
 		\item stringly typed (message topics)
@@ -189,7 +188,7 @@
 			\singleindent{\ttt{@EventTopic}, \ttt{@UIEventTopic} (UI thread)}
 	\end{itemize}
 \end{frame}%>>>
-\begin{frame}{Context vs Event Service}%<<<
+\begin{frame}{Context vs Event Service*}%<<<
 	\begin{itemize}
 		\item \str{objects} vs \str{actions}
 		\item \str{persistence} vs \str{differentiation}
@@ -207,9 +206,9 @@
 		\item handlers do not need notification \alert{[!]}
 	\end{itemize}
 \end{frame}%>>>
-\begin{frame}{Selection Service}%<<<
+\begin{frame}{Selection Service*}%<<<
 	\begin{itemize}
-		\item context + event service
+		\item context service
 		\item active GUI selection
 		\item window- and part- specific
 	\end{itemize}
@@ -278,7 +277,7 @@
 			\end{enumerate}
 	\end{itemize}
 \end{frame}%>>>
-\begin{frame}{Extensions vs Addons}%<<<
+\begin{frame}{Extensions vs Addons*}%<<<
 	\begin{enumerate}
 		\item prefer \str{addons} (simpler, DI)
 		\item \str{extensions} for existing extension points
@@ -324,7 +323,7 @@
 	\end{itemize}
 \end{frame}%>>>
 \begin{frame}%<<<
-	\frametitle{Summary}
+	\frametitle{Summary*}
 	\begin{enumerate}
 		\item \str{dependency injection}: I~want something, framework finds it
 		\item \str{inversion of control}: I~write snippets, framework uses them
