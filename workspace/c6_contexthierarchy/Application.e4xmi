@@ -26,7 +26,7 @@
       </children>
     </trimBars>
   </children>
-  <children xsi:type="basic:Window" xmi:id="_0wblcOhbEeSJdr40kw8Bsw" elementId="c6_contexthierarchy.window.secondWindow" label="Second window">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_5EpS0PlVEeS-d_q21lrzZw" elementId="c6_contexthierarchy.trimmedwindow.secondwindow" label="Second window">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_a1E9EOhjEeSJdr40kw8Bsw" elementId="c6_contexthierarchy.perspectivestack.0">
       <children xsi:type="advanced:Perspective" xmi:id="_bhk2sOhjEeSJdr40kw8Bsw" elementId="c6_contexthierarchy.perspective.0">
         <children xsi:type="basic:PartStack" xmi:id="_4lM3kOhbEeSJdr40kw8Bsw" elementId="c6_contexthierarchy.partstack.0">
@@ -35,6 +35,11 @@
         </children>
       </children>
     </children>
+    <trimBars xmi:id="_9icT0PlVEeS-d_q21lrzZw" elementId="c6_contexthierarchy.trimbar.0">
+      <children xsi:type="menu:ToolBar" xmi:id="_-LlXcPlVEeS-d_q21lrzZw" elementId="c6_contexthierarchy.toolbar.0">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_-oumcPlVEeS-d_q21lrzZw" elementId="c6_contexthierarchy.handledtoolitem.save" label="Save" iconURI="platform:/plugin/c6_contexthierarchy/icons/save_edit.png" command="_PM-QMOgkEeS_hNc8afLGTQ"/>
+      </children>
+    </trimBars>
   </children>
   <handlers xmi:id="_PM-QMegkEeS_hNc8afLGTQ" elementId="c6_contexthierarchy.handler.saveCommand" contributionURI="bundleclass://c6_contexthierarchy/c6_contexthierarchy.handlers.SaveHandler" command="_PM-QMOgkEeS_hNc8afLGTQ"/>
   <bindingTables xmi:id="_PM-QLugkEeS_hNc8afLGTQ" bindingContext="_PM-QKegkEeS_hNc8afLGTQ">

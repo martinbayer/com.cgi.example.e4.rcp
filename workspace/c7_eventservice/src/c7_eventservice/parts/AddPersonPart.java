@@ -103,13 +103,14 @@ public class AddPersonPart {
 	}
 
 	public void addPerson() {
-		System.out.println("Event invoked");
+		System.out.println("Add event invoked");
 		eventBroker.send(PersonEventConstants.TOPIC_PERSON_NEW,
 				createPersonFromForm());
 	}
 
 	public void deletePerson() {
-		eventBroker.post(PersonEventConstants.TOPIC_PERSON_DELETE,
+		System.out.println("Delete event invoked");
+		eventBroker.send(PersonEventConstants.TOPIC_PERSON_DELETE,
 				createPersonFromForm());
 	}
 

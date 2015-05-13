@@ -1,3 +1,4 @@
 Basic dependency injection is shown in this example.
-If the Help->About menu item is used without any change, general dialog is displayed.
-If there is any value used for Author and the value is Saved using Save command, About dialog displays author's name.
+In DependencyInjection class there is a Composite parent property injected in the method annotated with @PostConstruct.
+It is injected automatically from the application context.
+So you can inject also another objects which are present in the context...for example MPart

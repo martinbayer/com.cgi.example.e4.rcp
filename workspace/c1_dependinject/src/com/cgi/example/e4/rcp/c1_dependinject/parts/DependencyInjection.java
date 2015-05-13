@@ -35,7 +35,6 @@ public class DependencyInjection {
 		authorLabel = new Label(parent, SWT.NONE);
 		authorLabel.setText("Author: ");
 		authorInput = new Text(parent, SWT.BORDER);
-		authorInput.setMessage("Enter text to mark part as dirty");
 		authorInput.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 	}
 
